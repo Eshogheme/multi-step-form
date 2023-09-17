@@ -204,7 +204,7 @@ body {
 
   .switch {
     position: relative;
-    left: 60px;
+    left: 50px;
     top: 10px;
     display: inline-block;
     width: 70px;
@@ -261,12 +261,12 @@ body {
     font-family: "Ubuntu", sans-serif;
     font-size: 18px;
     position: relative;
-    left: 50px;
+    left: 40px;
   }
 
   .yearly {
     position: relative;
-    left: 70px;
+    left: 60px;
     color: hsl(231, 11%, 63%);
     font-family: "Ubuntu", sans-serif;
     font-size: 18px;
@@ -280,10 +280,11 @@ body {
     height: auto;
     padding: 20px;
     position: absolute;
-    top: 710px;
+    top: 720px;
 
     display: flex;
     flex-direction: row;
+
   }
   .btn2 {
     background-color: hsl(213, 96%, 18%);
@@ -294,10 +295,11 @@ body {
     height: 50px;
     border: none;
     border-radius: 5px;
-    margin-left: 170px;
-    /* position: absolute;
-   left: 60%;
-   top: 725px; */
+    
+     position: absolute;
+     left: 65%;
+   /* left: 60%;
+   top: 725px; */ 
   }
 
   .go-back-to-one {
