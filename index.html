@@ -19,17 +19,17 @@
     <div class="wrapper">
       <div class="div1">
         <section class="side-bar-icons">
-          <div class="ul">
-            <p class="sidebar-texts">1</li>
+          <div class="ul step1-icon-wrapper">
+            <p class="sidebar-texts one">1</li>   
           </div>
-          <div class="ul">
-            <p class="sidebar-texts">2</li>
+          <div class="ul step2-icon-wrapper">
+            <p class="sidebar-texts two">2</li>
           </div>
-          <div class="ul">
-            <p class="sidebar-texts">3</li>
+          <div class="ul step3-icon-wrapper">
+            <p class="sidebar-texts three">3</li>
           </div>
-          <div class="ul">
-            <p class="sidebar-texts">4</li>
+          <div class="ul step4-icon-wrapper">
+            <p class="sidebar-texts four">4</li>
           </div>
         </section>
       </div>
@@ -56,21 +56,24 @@
   <!-- Sidebar end -->
 
   <!-- Step 1 start -->
-  <div id="step1-di">
+
     <section class="step1-wrapper step1">
       <header class="header">
         <h2 class="h2">Personal info</h2>
         <p class="header-text">Please provide your name, email address, and phone number.</p>
       </header>
+      <p class="error-text">
+        (*All fields must be filled*)
+      </p>
       <form class="form">
-        <label class="label" for="text">Name </label>
-        <input class="input" type="text" placeholder="e.g. Stephen King" required />
+        <label class="label" for="name">Name </label>
+        <input class="input" type="name" placeholder="e.g. Stephen King"/>
 
         <label class="label" for="email">Email Address</label>
-        <input class="input" type="email" placeholder="e.g. stephenking@lorem.com" required />
+        <input class="input" type="email" placeholder="e.g. stephenking@lorem.com" />
 
         <label class="label" for="number">Phone Number</label>
-        <input class="input" type="number" placeholder="e.g. +1 234 567 890" required />
+        <input class="input" type="number" placeholder="e.g. +1 234 567 890"/>
       </form>
 
     </section>
@@ -90,7 +93,7 @@
       <p class="header-text">You have the option of monthly or yearly billing.</p>
     </header>
     <section>
-      <div class="arcade-wrapper">
+      <div class="arcade-wrapper selected">
         <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
           <g fill="none" fill-rule="evenodd">
             <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
@@ -101,9 +104,11 @@
         <div class="step2-text">
           <p class="step2-firsttext">Arcade</p>
           <p class="step2-secondtext">$9/mo</p>
+          <p class="step2-secondtext yr">$90/yr</p>
+          <p class="step2-thirdtext">2 months free</p>
         </div>
       </div>
-      <div class="arcade-wrapper">
+      <div class="arcade-wrapper advanced">
         <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
           <g fill="none" fill-rule="evenodd">
             <circle cx="20" cy="20" r="20" fill="#F9818E" />
@@ -113,10 +118,12 @@
         </svg>
         <div class="step2-text">
           <p class="step2-firsttext"> Advanced </p>
-          <p class="step2-secondtext">$12/mo</p>
+          <p class="step2-secondtext bar">$12/mo</p>
+          <p class="step2-secondtext ye">$120/yr</p>
+          <p class="step2-thirdtext drunk">2 months free</p>
         </div>
       </div>
-      <div class="arcade-wrapper">
+      <div class="arcade-wrapper pro">
         <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
           <g fill="none" fill-rule="evenodd">
             <circle cx="20" cy="20" r="20" fill="#483EFF" />
@@ -126,7 +133,9 @@
         </svg>
         <div class="step2-text">
           <p class="step2-firsttext">Pro</p>
-          <p class="step2-secondtext">$15/mo</p>
+          <p class="step2-secondtext past">$15/mo</p>
+          <p class="step2-secondtext ya">$150/yr</p>
+          <p class="step2-thirdtext future">2 months free</p>
         </div>
       </div>
     </section>
@@ -166,7 +175,7 @@
     </section>
     <section class="checkbox-wrapper">
       <label for=""></label>
-      <input type="checkbox" name="option2" value="Larger storage" />
+      <input class="checkbox-input" type="checkbox" name="option2" value="Larger storage" />
       <div class="step3-text-wrapper">
         <p class="step3-first-text">Larger storage</p>
         <p class="step3-second-text">Extra 1TB of cloud save</p>
@@ -175,7 +184,7 @@
     </section>
     <section class="checkbox-wrapper">
       <label for=""></label>
-      <input type="checkbox" name="option2" value="Larger storage" />
+      <input class="checkbox-input" type="checkbox" name="option2" value="Larger storage" />
       <div class="step3-text-wrapper">
         <p class="step3-first-text">Customizable Profile</p>
         <p class="step3-second-text">Custom theme on your profile</p>
@@ -197,12 +206,13 @@
     </header>
 
     <!-- Dynamically add subscription and add-on selections here -->
-
-
-
-
     <div class="step4-wrapper">
-      <p class="target1">Arcade(Monthly)</p>
+      <p class="arcade-target">Arcade(Monthly)</p>
+      <p class="advanced-target">Advanced(Monthly)</p>
+      <p class="pro-target">Pro(Monthly)</p>
+      <p class="arcade-yearly">Arcade(Yearly)</p>
+      <p class="advanced-yearly">Advanced(Yearly)</p>
+      <p class="pro-yearly">Pro(Yearly)</p>
       <a class="link-to-first-page" href="">Change</a>
       <p class="target2">$9/mo</p>
       <hr />
@@ -249,6 +259,8 @@
         href="#">Eshogheme
       </a>.
     </div> -->
+
+    <script src="script.js"></script>
 </body>
 
 </html>

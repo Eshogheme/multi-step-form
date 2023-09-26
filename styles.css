@@ -57,12 +57,9 @@ body {
     visibility: hidden;
   }
   /* step1 begins */
-  #step1-div {
-    position: relative;
-    padding: 10px;
-  }
+ 
   .step1 {
-    visibility: hidden;
+    visibility: visible;
   }
   .step1-wrapper {
     overflow-x: hidden;
@@ -109,7 +106,7 @@ body {
     margin: 5px;
   }
 
-  .form input {
+  .form .input {
     padding: 20px;
     width: 95%;
     border: 1px solid hsl(229, 24%, 87%);
@@ -122,15 +119,25 @@ body {
     font-size: 17px;
   }
 
-  .button-wrap {
+  .error-text{
+    font-size: 17px;
+    font-family: "Ubuntu", sans-serif;
+    color: hsl(354, 84%, 57%);
     visibility: hidden;
+  }
+
+  .error-text2{
+    visibility: visible;
+  }
+  .button-wrap {
+    visibility:visible;
     background-color: white;
     width: 100%;
     min-height: 15vh;
     height: auto;
     padding: 20px;
     position: absolute;
-    top: 630px;
+    top: 715px;
   }
 
   .btn1 {
@@ -148,9 +155,11 @@ body {
     z-index: 100;
   }
 
+  
+
   /* step 2 begins */
   .step2 {
-    visibility: visible;
+    visibility: hidden;
   }
   .arcade-wrapper {
     display: flex;
@@ -163,6 +172,7 @@ body {
     position: relative;
     left: 15px;
   }
+  
   .svg {
     position: relative;
     top: 20px;
@@ -183,7 +193,33 @@ body {
     color: hsl(231, 11%, 63%);
     font-family: "Ubuntu", sans-serif;
   }
+.yr{
+  position: absolute;
+  top: 45px;
+  visibility: hidden;
+}
+.years{
+  visibility: visible;
+}
+.step2-thirdtext{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 10px;
+  position: absolute;
+  top: 70px;
+  color: hsl(213, 96%, 18%);
+  visibility: hidden;
+}
 
+.ye{
+  position: absolute;
+  top: 45px;
+  visibility: hidden;
+}
+.ya{
+  position: absolute;
+  top: 45px;
+  visibility: hidden;
+}
   .slider-div {
     background-color: hsl(231, 100%, 99%);
     display: flex;
@@ -273,7 +309,7 @@ body {
   }
 
   .button2-wrap {
-    visibility: visible;
+    visibility: hidden;
     background-color: white;
     width: 100%;
     min-height: 15vh;
@@ -360,14 +396,14 @@ body {
   }
 
   .button3-wrap {
-    visibility: hidden;
+    visibility:hidden;
     background-color: white;
     width: 100%;
     min-height: 15vh;
     height: auto;
     padding: 20px;
     position: absolute;
-    top: 625px;
+    top: 715px;
 
     display: flex;
     flex-direction: row;
@@ -408,14 +444,65 @@ body {
     left: 15px;
   }
 
-  .target1 {
+ .arcade-target{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+visibility: hidden;
+ }
+  .advanced-target{
     font-family: myFont;
     color: hsl(213, 96%, 18%);
     padding: 2px;
     margin: 0;
     width: 100%;
+    position: absolute;
+    top: 20px;
     visibility: hidden;
   }
+.pro-target{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+
+.arcade-yearly{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+.advanced-yearly{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+.pro-yearly{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
   .target2 {
     font-family: myFont;
     color: hsl(213, 96%, 18%);
@@ -441,14 +528,14 @@ body {
   }
 
   .button4-wrap {
-    visibility: hidden;
+    visibility:hidden;
     background-color: white;
     width: 100%;
     min-height: 15vh;
     height: auto;
     padding: 20px;
     position: absolute;
-    top: 625px;
+    top: 715px;
 
     display: flex;
     flex-direction: row;
