@@ -63,7 +63,7 @@ body {
   }
   .step1-wrapper {
     overflow-x: hidden;
-    width: 92%;
+    width: 95%;
     min-height: 45vh;
     height: auto;
     background-color: white;
@@ -452,6 +452,7 @@ body {
   width: 100%;
 visibility: hidden;
  }
+
   .advanced-target{
     font-family: myFont;
     color: hsl(213, 96%, 18%);
@@ -503,17 +504,81 @@ visibility: hidden;
     top: 20px;
     visibility: hidden;
 }
-  .target2 {
-    font-family: myFont;
-    color: hsl(213, 96%, 18%);
-    padding: 2px;
-    margin: 0;
-    width: 100%;
-    position: absolute;
-    left: 70%;
-    top: 21px;
-    visibility: hidden;
-  }
+.target-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 30px;
+  visibility: hidden;
+}
+ 
+.online-service{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  visibility: hidden;
+}
+
+.online-service-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 90px;
+  visibility: hidden;
+}
+
+.larger-storage{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  visibility: hidden;
+}
+.larger-storage-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 130px;
+  visibility: hidden;
+}
+.customizable-profile{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  visibility:hidden;
+}
+
+.customizable-profile-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 170px;
+  visibility: hidden;
+}
   .link-to-first-page {
     font-family: "Ubuntu", sans-serif;
     margin-bottom: 10px;
@@ -527,6 +592,35 @@ visibility: hidden;
     top: 12px;
   }
 
+  .folake{
+    visibility:hidden;
+  }
+  .emma{
+    visibility:hidden;
+  }
+  .king{
+    visibility:hidden;
+  }
+
+.total{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+}
+.total-price{
+  font-family: myFont;
+  color: hsl(243, 100%, 62%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  bottom: 25px;
+  visibility: hidden;
+}
   .button4-wrap {
     visibility:hidden;
     background-color: white;
