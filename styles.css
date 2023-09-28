@@ -609,6 +609,7 @@ visibility: hidden;
   color: hsl(231, 11%, 63%);
   width: 100%;
   text-decoration: none;
+  visibility: hidden;
 }
 .total-price{
   font-family: myFont;

@@ -43,36 +43,46 @@ const step5 = document.querySelector(".step5");
 const input = document.querySelectorAll(".input");
 const errorText = document.querySelector(".error-text");
 const arcadeTarget = document.querySelector(".arcade-target");
-const advancedTarget = document.querySelector('.advanced-target');
+const advancedTarget = document.querySelector(".advanced-target");
 const proTarget = document.querySelector(".pro-target");
 const arcadeYearly = document.querySelector(".arcade-yearly");
 const advancedYearly = document.querySelector(".advanced-yearly");
 const proYearly = document.querySelector(".pro-yearly");
 const targetPrice = document.querySelector(".target-price");
-const serviceOnline = document.querySelector('.service-online');
-const onlineService = document.querySelector('.online-service');
-const onlineServicePrice = document.querySelector('.online-service-price');
+const serviceOnline = document.querySelector(".service-online");
+const onlineService = document.querySelector(".online-service");
+const onlineServicePrice = document.querySelector(".online-service-price");
 const storageLine = document.querySelector(".storage-line");
 const largerStorage = document.querySelector(".larger-storage");
 const largerStoragePrice = document.querySelector(".larger-storage-price");
-const priceCustomizable = document.querySelector('.profile-customizable');
-const customizableProfile = document.querySelector('.customizable-profile');
-const customizableProfilePrice = document.querySelector('.customizable-profile-price');
-const folake = document.querySelector('.folake');
-const step3ThirdText  = document.querySelector('.step3-third-text');
-const extra2 = document.querySelector('.extra2');
-const extra3 = document.querySelector('.extra3');
-const emma = document.querySelector('.emma');
-const king = document.querySelector('.king');
-const total = document.querySelector('.total-price');
-const arcadeContent = (arcadeWrapper.querySelector("p:nth-child(2)").textContent);
-const advancedContent = advancedWrapper.querySelector("p:nth-child(2)").textContent;
-const serviceOnlineContent = serviceOnline.querySelector("p:nth-child(1)").textContent;
-const serviceOnlinePrice = serviceOnline.querySelector("p:nth-child(4)").textContent;
-const storageLineContent = storageLine.querySelector("p:nth-child(1)").textContent;
-  const storageLinePrice = storageLine.querySelector("p:nth-child(4)").textContent;
-  const priceCustomizableContent =  priceCustomizable.querySelector("p:nth-child(1)").textContent;
-  const priceCustomizablePrice =  priceCustomizable.querySelector("p:nth-child(4)").textContent;
+const priceCustomizable = document.querySelector(".profile-customizable");
+const customizableProfile = document.querySelector(".customizable-profile");
+const customizableProfilePrice = document.querySelector(
+  ".customizable-profile-price"
+);
+const folake = document.querySelector(".folake");
+const step3ThirdText = document.querySelector(".step3-third-text");
+const extra2 = document.querySelector(".extra2");
+const extra3 = document.querySelector(".extra3");
+const emma = document.querySelector(".emma");
+const king = document.querySelector(".king");
+const total = document.querySelector(".total-price");
+const totalText = document.querySelector(".total");
+const arcadeContent = arcadeWrapper.querySelector("p:nth-child(2)").textContent;
+const advancedContent =
+  advancedWrapper.querySelector("p:nth-child(2)").textContent;
+const serviceOnlineContent =
+  serviceOnline.querySelector("p:nth-child(1)").textContent;
+const serviceOnlinePrice =
+  serviceOnline.querySelector("p:nth-child(4)").textContent;
+const storageLineContent =
+  storageLine.querySelector("p:nth-child(1)").textContent;
+const storageLinePrice =
+  storageLine.querySelector("p:nth-child(4)").textContent;
+const priceCustomizableContent =
+  priceCustomizable.querySelector("p:nth-child(1)").textContent;
+const priceCustomizablePrice =
+  priceCustomizable.querySelector("p:nth-child(4)").textContent;
 
 console.log(folake);
 
@@ -80,8 +90,7 @@ console.log(folake);
 stepOneWrapper.style.backgroundColor = "hsl(206, 94%, 87%)";
 stepOneIconText.style.color = "hsl(213, 96%, 18%)";
 
-
-//This is the button that'd take us to the second page 
+//This is the button that'd take us to the second page
 btn1.addEventListener("click", () => {
   // Set the visibility of step1 to "hidden"
   // let hasEmptyInput = false;
@@ -108,16 +117,15 @@ btn1.addEventListener("click", () => {
   step2.style.visibility = "visible";
   btn2Wrapper.style.visibility = "visible";
 
- 
   // This gives new styles when the second page is visible
   if (step2.style.visibility === "visible") {
     stepTwoWrapper.style.backgroundColor = "hsl(206, 94%, 87%)";
-    stepTwoIconText.style.color = "hsl(213, 96%, 18%)";    
+    stepTwoIconText.style.color = "hsl(213, 96%, 18%)";
   }
   // Removes the styles added to step2 when it is hidden
   stepOneWrapper.style.removeProperty("background-color");
   stepOneIconText.style.removeProperty("color");
- 
+
   //This makes it sure that when we switch from months to years, the month aspect of every thing is hidden and the year aspect is visible
   years.classList.remove("years");
   secondText.style.visibility = "visible";
@@ -129,9 +137,6 @@ btn1.addEventListener("click", () => {
   past.style.visibility = "visible";
   future.style.visibility = "hidden";
 });
-
-
-
 
 //This sends us back to step1 when it is clicked
 goBackOne.addEventListener("click", () => {
@@ -146,7 +151,7 @@ goBackOne.addEventListener("click", () => {
   stepOneIconText.style.color = "hsl(213, 96%, 18%)";
   secondText.style.visibility = "hidden";
   thirdText.style.visibility = "hidden";
-// The new texts added for the years are hidden when step2 is hidden
+  // The new texts added for the years are hidden when step2 is hidden
   secondText.style.visibility = "hidden";
   thirdText.style.visibility = "hidden";
   years.classList.remove("years");
@@ -158,8 +163,7 @@ goBackOne.addEventListener("click", () => {
   future.style.visibility = "hidden";
 });
 
-  // Add the prices of selected options to the total
- 
+// Add the prices of selected options to the total
 
 //This is the first wrapper that holds the contents for the arcade aspect
 arcadeWrapper.addEventListener("click", () => {
@@ -172,36 +176,45 @@ arcadeWrapper.addEventListener("click", () => {
   console.log(arcadeWrapper.textContent);
 
   // const arcadeContent = parseInt(arcadeWrapper.querySelector("p:nth-child(2)").textContent);
+  //   arcadeTarget.classList.add("arcade-target2");
+  advancedTarget.style.visibility = "hidden";
+  proTarget.style.visibility = "hidden";
+  if ((step2.style.visibility = "visible")) {
+    arcadeTarget.style.visibility = "hidden";
+    step2.style.zIndex = "10";
+  }
 
+  if ((step4.style.visibility = "visible")) {
+    arcadeTarget.style.visibility = "visible";
+    step4.style.zIndex = "-10";
+    targetPrice.innerHTML = arcadeContent;
+    targetPrice.style.visibility = "visible";
+    let arcadeTotalMonthly = arcadeContent;
 
- 
- 
-//   arcadeTarget.classList.add("arcade-target2");
-advancedTarget.style.visibility = "hidden";
-proTarget.style.visibility = "hidden";
-if(step2.style.visibility = "visible"){
-  arcadeTarget.style.visibility = "hidden";
-  step2.style.zIndex = "10";
-}
+    // The total if everthings is clicked
+    const num1 = parseFloat(
+      arcadeTotalMonthly.replace("$", "").replace("/mo", "")
+    );
+    const num2 = parseFloat(
+      serviceOnlinePrice.replace("$", "").replace("/mo", "")
+    );
 
-if(step4.style.visibility = "visible"){
-arcadeTarget.style.visibility = "visible";
-step4.style.zIndex ="-10";
-targetPrice.innerHTML = arcadeContent;
-targetPrice.style.visibility = "visible";
-let arcadeTotalMonthly = arcadeContent;
-const num1 = parseFloat(arcadeTotalMonthly.replace("$", "").replace("/mo", ""));
-const num2 = parseFloat( serviceOnlinePrice.replace("$", "").replace("/mo", ""));
-const num3 = parseFloat( storageLinePrice.replace("$", "").replace("/mo", ""));
-const num4 = parseFloat(  priceCustomizablePrice.replace("$", "").replace("/mo", ""))
-const result =  num1 + num2 + num3 + num4;
+    const result = num1 + num2;
+    const formattedResult = `$${result}/mo`;
+    total.innerHTML = formattedResult;
+    total.style.visibility = "visible";
+    totalText.style.visibility = "visible";
 
-const formattedResult = `$${result}/mo`
-total.innerHTML = formattedResult;
-total.style.visibility = "visible";
-}
+    const num3 = parseFloat(
+      storageLinePrice.replace("$", "").replace("/mo", "")
+    );
+    const newResult = num1 + num2 + num3;
+    const formatResult = `$${newResult}/mo`;
+    total.innerHTML = formatResult;
+    total.style.visibility = "visible";
+    totalText.style.visibility = "visible";
+  }
 });
-
 
 //This is the first wrapper that holds the contents for the advanced aspect
 advancedWrapper.addEventListener("click", () => {
@@ -211,28 +224,40 @@ advancedWrapper.addEventListener("click", () => {
   arcadeWrapper.style.removeProperty("border");
   proWrapper.style.removeProperty("background-color");
   proWrapper.style.removeProperty("border");
-  
+
   console.log(advancedContent);
 
   // advancedTarget.classList.add("arcade-target2");
   arcadeTarget.style.visibility = "hidden";
   proTarget.style.visibility = "hidden";
-  if(step2.style.visibility = "visible"){
+  if ((step2.style.visibility = "visible")) {
     advancedTarget.style.visibility = "hidden";
     step2.style.zIndex = "10";
   }
- 
-if(step4.style.visibility = "visible"){
-  advancedTarget.style.visibility = "visible";
-  step4.style.zIndex ="-10";
-  targetPrice.innerHTML = advancedContent;
-  targetPrice.style.visibility = "visible";
 
-}
+  if ((step4.style.visibility = "visible")) {
+    advancedTarget.style.visibility = "visible";
+    step4.style.zIndex = "-10";
+    targetPrice.innerHTML = advancedContent;
+    targetPrice.style.visibility = "visible";
+    let advancedTotalMonth = advancedContent;
+    const num1 = parseFloat(
+      advancedTotalMonth.replace("$", "").replace("/mo", "")
+    );
+    const num2 = parseFloat(
+      serviceOnlinePrice.replace("$", "").replace("/mo", "")
+    );
+
+    const result = num1 + num2;
+
+    const formattedResult = `$${result}/mo`;
+    total.innerHTML = formattedResult;
+    total.style.visibility = "visible";
+    totalText.style.visibility = "visible";
+  }
   //shows all the elements inside the wrapper in the console
   //   advancedWrapper.querySelector("p:nth-child(4)").textContent;
   // console.log(specificContent);
- 
 });
 
 //This is the first wrapper that holds the contents for the pro aspect
@@ -246,19 +271,29 @@ proWrapper.addEventListener("click", () => {
   arcadeTarget.style.visibility = "hidden";
   advancedTarget.style.visibility = "hidden";
   const proContent = proWrapper.querySelector("p:nth-child(2)").textContent;
-  if(step2.style.visibility = "visible"){
+  if ((step2.style.visibility = "visible")) {
     proTarget.style.visibility = "hidden";
     step2.style.zIndex = "10";
   }
- 
-if(step4.style.visibility = "visible"){
-  proTarget.style.visibility = "visible";
-  step4.style.zIndex ="-10";
-  targetPrice.innerHTML = proContent;
-  targetPrice.style.visibility = "visible";
-}
 
+  if ((step4.style.visibility = "visible")) {
+    proTarget.style.visibility = "visible";
+    step4.style.zIndex = "-10";
+    targetPrice.innerHTML = proContent;
+    targetPrice.style.visibility = "visible";
+    proTotalMonth = proContent;
+    const num1 = parseFloat(proTotalMonth.replace("$", "").replace("/mo", ""));
+    const num2 = parseFloat(
+      serviceOnlinePrice.replace("$", "").replace("/mo", "")
+    );
 
+    const result = num1 + num2;
+
+    const formattedResult = `$${result}/mo`;
+    total.innerHTML = formattedResult;
+    total.style.visibility = "visible";
+    totalText.style.visibility = "visible";
+  }
 });
 
 let sliderClickCount = 0;
@@ -282,112 +317,113 @@ slider.addEventListener("click", () => {
     step3ThirdText.style.visibility = "hidden";
     extra2.style.visibility = "hidden";
     extra3.style.visibility = "hidden";
-    
+
     // when the slider button is on yearly, and the arcade,advanced or pro wrappers are clicked, the yearly texts are visible in step4
     arcadeWrapper.addEventListener("click", () => {
-     arcadeTarget.style.visibility = "hidden";
-    advancedYearly.style.visibility = "hidden";
-    // proTarget.style.visibility = "hidden";
-    const arcadeYearContent = arcadeWrapper.querySelector("p:nth-child(3)").textContent;
+      arcadeTarget.style.visibility = "hidden";
+      advancedYearly.style.visibility = "hidden";
+      // proTarget.style.visibility = "hidden";
+      const arcadeYearContent =
+        arcadeWrapper.querySelector("p:nth-child(3)").textContent;
 
-    if(step2.style.visibility = "visible"){
-      arcadeYearly.style.visibility = "hidden";
-      step2.style.zIndex = "10";
-    }
-    
-    if(step4.style.visibility = "visible"){
-    arcadeYearly.style.visibility = "visible";
-    step4.style.zIndex ="-10";
-    targetPrice.innerHTML = arcadeYearContent;
-    targetPrice.style.visibility = "visible";
-    }
+      if ((step2.style.visibility = "visible")) {
+        arcadeYearly.style.visibility = "hidden";
+        step2.style.zIndex = "10";
+      }
+
+      if ((step4.style.visibility = "visible")) {
+        arcadeYearly.style.visibility = "visible";
+        step4.style.zIndex = "-10";
+        targetPrice.innerHTML = arcadeYearContent;
+        targetPrice.style.visibility = "visible";
+      }
     });
     advancedWrapper.addEventListener("click", () => {
-      advancedTarget.style.visibility = "hidden";;
+      advancedTarget.style.visibility = "hidden";
       arcadeYearly.style.visibility = "hidden";
       // proYearly.style.visibility = "hidden";
-      const advancedYearContent = advancedWrapper.querySelector("p:nth-child(3)").textContent;
-      if(step2.style.visibility = "visible"){
+      const advancedYearContent =
+        advancedWrapper.querySelector("p:nth-child(3)").textContent;
+      if ((step2.style.visibility = "visible")) {
         advancedYearly.style.visibility = "hidden";
         step2.style.zIndex = "10";
       }
-    if(step4.style.visibility = "visible"){
-      advancedYearly.style.visibility = "visible";
-      step4.style.zIndex ="-10"
-      targetPrice.innerHTML = advancedYearContent;
-    targetPrice.style.visibility = "visible";
-    }
-     
+      if ((step4.style.visibility = "visible")) {
+        advancedYearly.style.visibility = "visible";
+        step4.style.zIndex = "-10";
+        targetPrice.innerHTML = advancedYearContent;
+        targetPrice.style.visibility = "visible";
+      }
     });
     proWrapper.addEventListener("click", () => {
-      
       proTarget.style.visibility = "hidden";
       advancedTarget.style.visibility = "hidden";
-      const proYearContent = proWrapper.querySelector("p:nth-child(3)").textContent;
-    
-      if(step2.style.visibility = "visible"){
+      const proYearContent =
+        proWrapper.querySelector("p:nth-child(3)").textContent;
+
+      if ((step2.style.visibility = "visible")) {
         proYearly.style.visibility = "hidden";
-        step2.style.zIndex = "10"
+        step2.style.zIndex = "10";
       }
-     
-    if(step4.style.visibility = "visible"){
-      proYearly.style.visibility = "visible";
-      step4.style.zIndex ="-10";
-      targetPrice.innerHTML = proYearContent;
-      targetPrice.style.visibility = "visible";
-    }
+
+      if ((step4.style.visibility = "visible")) {
+        proYearly.style.visibility = "visible";
+        step4.style.zIndex = "-10";
+        targetPrice.innerHTML = proYearContent;
+        targetPrice.style.visibility = "visible";
+      }
     });
 
-
-    serviceOnline.addEventListener("click", ()=>{
+    serviceOnline.addEventListener("click", () => {
       console.log(serviceOnline.textContent);
-      const serviceOnlineContentYear= serviceOnline.querySelector("p:nth-child(1)").textContent;
-      const serviceOnlinePriceYear = serviceOnline.querySelector("p:nth-child(5)").textContent;
-    
-    if(step4.style.visibility = "visible"){
-      step4.style.zIndex ="-10";
-      onlineService.innerHTML = serviceOnlineContentYear;
-      onlineService.style.visibility = "visible";
-      onlineServicePrice.innerHTML = serviceOnlinePriceYear;
-      onlineServicePrice.style.visibility = "visible";
-    }else{
-      onlineService.style.visibility = "hidden";
-      onlineServicePrice.style.visibility = "hidden";
-    }
-    })
+      const serviceOnlineContentYear =
+        serviceOnline.querySelector("p:nth-child(1)").textContent;
+      const serviceOnlinePriceYear =
+        serviceOnline.querySelector("p:nth-child(5)").textContent;
 
+      if ((step4.style.visibility = "visible")) {
+        step4.style.zIndex = "-10";
+        onlineService.innerHTML = serviceOnlineContentYear;
+        onlineService.style.visibility = "visible";
+        onlineServicePrice.innerHTML = serviceOnlinePriceYear;
+        onlineServicePrice.style.visibility = "visible";
+      } else {
+        onlineService.style.visibility = "hidden";
+        onlineServicePrice.style.visibility = "hidden";
+      }
+    });
 
-    storageLine.addEventListener("click", ()=>{
+    storageLine.addEventListener("click", () => {
       console.log(storageLine.textContent);
-      const storageLineContentYear = storageLine.querySelector("p:nth-child(1)").textContent;
-      const storageLinePriceYear = storageLine.querySelector("p:nth-child(5)").textContent;
-    
-    if(step4.style.visibility = "visible"){
-      step4.style.zIndex ="-10";
-      largerStorage.innerHTML =  storageLineContentYear;
-      largerStorage.style.visibility = "visible";
-      largerStoragePrice.innerHTML = storageLinePriceYear;
-      largerStoragePrice.style.visibility = "visible";
-    }
-    })
-    
-    priceCustomizable.addEventListener("click", ()=>{
+      const storageLineContentYear =
+        storageLine.querySelector("p:nth-child(1)").textContent;
+      const storageLinePriceYear =
+        storageLine.querySelector("p:nth-child(5)").textContent;
+
+      if ((step4.style.visibility = "visible")) {
+        step4.style.zIndex = "-10";
+        largerStorage.innerHTML = storageLineContentYear;
+        largerStorage.style.visibility = "visible";
+        largerStoragePrice.innerHTML = storageLinePriceYear;
+        largerStoragePrice.style.visibility = "visible";
+      }
+    });
+
+    priceCustomizable.addEventListener("click", () => {
       console.log(priceCustomizable.textContent);
-      const priceCustomizableContentYear =  priceCustomizable.querySelector("p:nth-child(1)").textContent;
-      const priceCustomizablePriceYear =  priceCustomizable.querySelector("p:nth-child(5)").textContent;
-    
-    if(step4.style.visibility = "visible"){
-      step4.style.zIndex ="-10";
-      customizableProfile.innerHTML = priceCustomizableContentYear;
-      customizableProfile.style.visibility = "visible";
-      customizableProfilePrice.innerHTML = priceCustomizablePriceYear ;
-      customizableProfilePrice.style.visibility = "visible";
-    }
-    })
-    
-    
+      const priceCustomizableContentYear =
+        priceCustomizable.querySelector("p:nth-child(1)").textContent;
+      const priceCustomizablePriceYear =
+        priceCustomizable.querySelector("p:nth-child(5)").textContent;
 
-
+      if ((step4.style.visibility = "visible")) {
+        step4.style.zIndex = "-10";
+        customizableProfile.innerHTML = priceCustomizableContentYear;
+        customizableProfile.style.visibility = "visible";
+        customizableProfilePrice.innerHTML = priceCustomizablePriceYear;
+        customizableProfilePrice.style.visibility = "visible";
+      }
+    });
   } else {
     yearly.style.color = "hsl(231, 11%, 63%)";
     monthly.style.color = "hsl(213, 96%, 18%)";
@@ -481,49 +517,52 @@ checkBoxInput.forEach((checkBoxInput) => {
 
 // when individual checkbox wrappers are clicked, their content shows up in step4
 
-serviceOnline.addEventListener("click", ()=>{
+serviceOnline.addEventListener("click", () => {
   console.log(serviceOnline.textContent);
-  const serviceOnlineContent = serviceOnline.querySelector("p:nth-child(1)").textContent;
-  const serviceOnlinePrice = serviceOnline.querySelector("p:nth-child(4)").textContent;
+  const serviceOnlineContent =
+    serviceOnline.querySelector("p:nth-child(1)").textContent;
+  const serviceOnlinePrice =
+    serviceOnline.querySelector("p:nth-child(4)").textContent;
 
-if(step4.style.visibility = "visible"){
-  step4.style.zIndex ="-10";
-  onlineService.innerHTML = serviceOnlineContent;
-  onlineService.style.visibility = "visible";
-  onlineServicePrice.innerHTML = serviceOnlinePrice;
-  onlineServicePrice.style.visibility = "visible";
-}else{
-  onlineService.style.visibility = "hidden";
-  onlineServicePrice.style.visibility = "hidden";
-}
-})
+  if ((step4.style.visibility = "visible")) {
+    step4.style.zIndex = "-10";
+    onlineService.innerHTML = serviceOnlineContent;
+    onlineService.style.visibility = "visible";
+    onlineServicePrice.innerHTML = serviceOnlinePrice;
+    onlineServicePrice.style.visibility = "visible";
+  } else {
+    onlineService.style.visibility = "hidden";
+    onlineServicePrice.style.visibility = "hidden";
+  }
+});
 
-storageLine.addEventListener("click", ()=>{
+storageLine.addEventListener("click", () => {
   console.log(storageLine.textContent);
-  
 
-if(step4.style.visibility = "visible"){
-  step4.style.zIndex ="-10";
-  largerStorage.innerHTML =  storageLineContent;
-  largerStorage.style.visibility = "visible";
-  largerStoragePrice.innerHTML = storageLinePrice;
-  largerStoragePrice.style.visibility = "visible";
-}
-})
+  if ((step4.style.visibility = "visible")) {
+    step4.style.zIndex = "-10";
+    largerStorage.innerHTML = storageLineContent;
+    largerStorage.style.visibility = "visible";
+    largerStoragePrice.innerHTML = storageLinePrice;
+    largerStoragePrice.style.visibility = "visible";
+  }
+});
 
-priceCustomizable.addEventListener("click", ()=>{
+priceCustomizable.addEventListener("click", () => {
   console.log(priceCustomizable.textContent);
-  const priceCustomizableContent =  priceCustomizable.querySelector("p:nth-child(1)").textContent;
-  const priceCustomizablePrice =  priceCustomizable.querySelector("p:nth-child(4)").textContent;
+  const priceCustomizableContent =
+    priceCustomizable.querySelector("p:nth-child(1)").textContent;
+  const priceCustomizablePrice =
+    priceCustomizable.querySelector("p:nth-child(4)").textContent;
 
-if(step4.style.visibility = "visible"){
-  step4.style.zIndex ="-10";
-  customizableProfile.innerHTML = priceCustomizableContent;
-  customizableProfile.style.visibility = "visible";
-  customizableProfilePrice.innerHTML = priceCustomizablePrice ;
-  customizableProfilePrice.style.visibility = "visible";
-}
-})
+  if ((step4.style.visibility = "visible")) {
+    step4.style.zIndex = "-10";
+    customizableProfile.innerHTML = priceCustomizableContent;
+    customizableProfile.style.visibility = "visible";
+    customizableProfilePrice.innerHTML = priceCustomizablePrice;
+    customizableProfilePrice.style.visibility = "visible";
+  }
+});
 
 // let arcadeTotalMonthly = arcadeContent;
 // const num1 = parseFloat(arcadeTotalMonthly.replace("$", "").replace("/mo", ""));
@@ -534,10 +573,6 @@ if(step4.style.visibility = "visible"){
 // total.innerHTML = formattedResult;
 // total.style.visibility = "visible";
 
-
-
-
-
 btn3.addEventListener("click", () => {
   // Set the visibility of step3 to "hidden"
   step3.style.visibility = "hidden";
@@ -545,7 +580,7 @@ btn3.addEventListener("click", () => {
   step4.style.visibility = "visible";
   step4.style.zIndex = "10";
   btn4Wrapper.style.visibility = "visible";
-//This makes it so that when step4 is visible, the background color and color of the icon-wrapper changes 
+  //This makes it so that when step4 is visible, the background color and color of the icon-wrapper changes
   if (step4.style.visibility === "visible") {
     stepFourWrapper.style.backgroundColor = "hsl(206, 94%, 87%)";
     stepFourIconText.style.color = "hsl(213, 96%, 18%)";
@@ -579,9 +614,6 @@ goBackThree.addEventListener("click", () => {
   customizableProfilePrice.style.visibility = "hidden";
   total.style.visibility = "visible";
 });
-
-
-
 
 btn4.addEventListener("click", () => {
   // Set the visibility of step4 to "hidden"
