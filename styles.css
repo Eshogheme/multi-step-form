@@ -3,7 +3,7 @@
 }
 @font-face {
   font-family: myFont;
-  src: url(/assets/fonts/Ubuntu-Bold.ttf);
+  src: url(assets/fonts/Ubuntu-Bold.ttf);
 }
 
 body {
@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
   }
   .wrapper {
-    background-image: url(/assets/images/bg-sidebar-mobile.svg);
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
     width: 100%;
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -26,6 +26,7 @@ body {
   .wrapper .div1 {
     display: flex;
     position: relative;
+   
   }
 
   .side-bar-icons {
@@ -54,7 +55,7 @@ body {
     color: white;
   }
   .step-info-wrapper {
-    visibility: hidden;
+    display: none;
   }
   /* step1 begins */
  
@@ -515,6 +516,9 @@ visibility: hidden;
   top: 30px;
   visibility: hidden;
 }
+#should{
+  border: 1px solid black;
+}
  
 .online-service{
   font-family: "Ubuntu", sans-serif;
@@ -523,7 +527,7 @@ visibility: hidden;
   color: hsl(231, 11%, 63%);
   width: 100%;
   text-decoration: none;
-  visibility: hidden;
+  display: none;
 }
 
 .online-service-price{
@@ -535,7 +539,7 @@ visibility: hidden;
   position: absolute;
   left:78%;
   top: 90px;
-  visibility: hidden;
+  display: none;
 }
 
 .larger-storage{
@@ -545,7 +549,7 @@ visibility: hidden;
   color: hsl(231, 11%, 63%);
   width: 100%;
   text-decoration: none;
-  visibility: hidden;
+  display: none;
 }
 .larger-storage-price{
   font-family: myFont;
@@ -556,7 +560,7 @@ visibility: hidden;
   position: absolute;
   left:78%;
   top: 130px;
-  visibility: hidden;
+  display: none;
 }
 .customizable-profile{
   font-family: "Ubuntu", sans-serif;
@@ -565,7 +569,7 @@ visibility: hidden;
   color: hsl(231, 11%, 63%);
   width: 100%;
   text-decoration: none;
-  visibility:hidden;
+  display: none;
 }
 
 .customizable-profile-price{
@@ -577,7 +581,7 @@ visibility: hidden;
   position: absolute;
   left:78%;
   top: 170px;
-  visibility: hidden;
+  display: none;
 }
   .link-to-first-page {
     font-family: "Ubuntu", sans-serif;
@@ -618,7 +622,760 @@ visibility: hidden;
   margin: 0;
   width: 100%;
   position: absolute;
+  left:74%;
+  bottom: 25px;
+  visibility: hidden;
+}
+  .button4-wrap {
+    visibility:hidden;
+    background-color: white;
+    width: 100%;
+    min-height: 15vh;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 715px;
+
+    display: flex;
+    flex-direction: row;
+  }
+  .btn4 {
+    background-color: hsl(213, 96%, 18%);
+
+    color: white;
+    padding: 5px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 170px;
+    /* /* position: absolute;
+   left: 60%;
+   top: 725px;*/
+  }
+
+  .go-back-to-three {
+    color: hsl(231, 11%, 63%);
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  /* step5 begins */
+  .step5 {
+    visibility: hidden;
+  }
+  .step5-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .step5-svg {
+    margin: 20px;
+  }
+  .step5-head {
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .step5-text {
+    width: 100%;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    color: hsl(231, 11%, 63%);
+  }
+}
+
+@media (min-width:1400px){
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .wrapper {
+    background-image: url(assets/images/bg-sidebar-desktop.svg);
+    width: 40%;
+    min-height: 100vh;
+    height:auto;
+    background-size:100% 85vh;
+    background-repeat: no-repeat;
+    z-index: 100;
+    position: absolute;
+    top: 57px;
+    left:10px;
+    /* visibility: hidden; */
+  }
+  .wrapper .div1 {
+    display: flex;
+    position: relative;
+  }
+
+  .side-bar-icons {
+    display: grid;
+    grid-template-rows: repeat(4,80px);
+    position: absolute;
+    top: 50px;
+    left: 30%;
+    margin: 0 auto;
+    margin-left: 20px;
+  }
+
+  .ul {
+    border: 1px solid white;
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+   margin-top: 10px;
+    padding: 12px;
+
+  }
+
+  .sidebar-texts {
+    list-style-type: none;
+    font-size: 25px;
+    font-family: "Ubuntu", sans-serif;
+    position: relative;
+    top: -32.5px;
+    color: white;
+    display: grid;
+  }
+  .step-info-wrapper {
+   margin: 0;
+   font-size: 16px;
+   font-family: "Ubuntu", sans-serif;
+   position: relative;
+   top: -32.5px;
+   color: white;
+   padding: 10px;
+  }
+
+  .info-wrapper{
+    position: relative;
+    display: block;
+    margin:0;
+    left: 40%;
+    top:70px;
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .para{
+    font-family: "Ubuntu", sans-serif;
+    color: hsl(231, 11%, 63%);
+    font-size: 16px;
+    position: relative;
+    margin: 0;
+    width: 10%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .more-info{
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    top: -5px;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* step1 begins */
+ 
+  .step1 {
+    visibility: visible;
+  } 
+  .step1-wrapper {
+    overflow-x: hidden;
+    width: 80%;
+    min-height: 90vh;
+    height: auto;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    left:10%;
+    top: 50px;
+      
+  }
+
+  .header .h2 {
+    font-size: 30px;
+    font-family: myFont;
+    color: hsl(213, 96%, 18%);
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+    left: 35%;
+  }
+  .header .header-text {
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    color: hsl(231, 11%, 63%);
+    width: 90%;
+    padding: 10px;
+    position: relative;
+    left: 35%;
+  }
+  .form {
+    padding: 10px;
+    margin: 5px;
+  }
+  .form .label {
+    display: block;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+    left: 35%;
+  }
+
+  .form .input {
+    padding: 20px;
+    width: 60%;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 10px;
+    position: relative;
+    left: 35%;
+  }
+  .input[type="number"] {
+    /* Hide the outer (up and down) spin buttons */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  /* Hide the inner spin buttons (only in Safari) */
+  input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  /* Hide the outer spin buttons (in Chrome and Safari) */
+  input[type="number"]::-webkit-outer-spin-button {
+    display: none;
+  }
+
+  ::placeholder {
+    color: hsl(229, 24%, 87%);
+    font-family: "Ubuntu", sans-serif;
+    font-size: 17px;
+  }
+
+  .error-text{
+    font-size: 17px;
+    font-family: "Ubuntu", sans-serif;
+    color: hsl(354, 84%, 57%);
+    visibility: hidden;
+  }
+
+  .error-text2{
+    visibility: visible;
+  }
+  .button-wrap {
+    visibility:visible;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 590px;
+    left: 50%;
+  }
+
+  .btn1 {
+    background-color: hsl(213, 96%, 18%);
+
+    color: white;
+    padding: 5px;
+    width: 20%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    z-index: 100;
+  }
+
+  
+
+  /* step 2 begins */
+  .step2 {
+    visibility: hidden;
+  }
+  .components-section{
+    display: flex;
+    
+  }
+  .arcade-wrapper {
+    
+    border: 2px solid hsl(229, 24%, 87%);
+    border-radius: 10px;
+    padding: 7px;
+    padding-left: 30px;
+    margin: 5px;
+    width:16%;
+    height: 200px;
+    position: relative;
+    left: 35%;
+  }
+  
+  .svg {
+    position: relative;
+    top: 20px;
+  }
+
+  .step2-text {
+    display: block;
+    padding: 5px;
+    position: absolute;
+    top: 90px;
+  }
+
+  .step2-firsttext {
+    font-family: myFont;
+    font-weight: 200;
+    color: hsl(213, 96%, 18%);
+  }
+
+  .step2-secondtext {
+    color: hsl(231, 11%, 63%);
+    font-family: "Ubuntu", sans-serif;
+  }
+.yr{
+  position: absolute;
+  top: 45px;
+  visibility: hidden;
+}
+.years{
+  visibility: visible;
+}
+.step2-thirdtext{
+  font-family: "Ubuntu", sans-serif;
+  width: 100%;
+  font-size: 13px;
+  position: absolute;
+  top: 70px;
+  color: hsl(213, 96%, 18%);
+  visibility: hidden;
+}
+
+.ye{
+  position: absolute;
+  top: 45px;
+  visibility: hidden;
+}
+.ya{
+  position: absolute;
+  top: 45px;
+  visibility: hidden;
+}
+  .slider-div {
+    background-color: hsl(231, 100%, 99%);
+    display: flex;
+    padding: 10px;
+    width: 50%;
+    position: relative;
+    left: 30%;
+    border-radius: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Set the container height to the full viewport height */
+    background-color: #f0f0f0; /* Background color for the container */
+  }
+
+  .switch {
+    position: relative;
+    left: 50px;
+    top: 10px;
+    display: inline-block;
+    width: 70px;
+    height: 34px;
+  }
+
+  /* Hide the default checkbox input */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* Style the slider (the sliding button) */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%); /* Inactive background color */
+    transition: 0.4s; /* Transition effect to create a sliding animation */
+    border-radius: 34px;
+  }
+
+  /* Style the slider when it's in the "on" state */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 10px;
+    bottom: 4px;
+    background-color: white; /* Active background color */
+    transition: 0.4s; /* Transition effect to create a sliding animation */
+    border-radius: 50%;
+  }
+
+  /* Style the slider when it's checked (on) */
+  input:checked + .slider {
+    background-color: hsl(213, 96%, 18%); /* Active background color */
+  }
+
+  /* Style the slider's circle when it's checked (on) */
+  input:checked + .slider:before {
+    transform: translateX(
+      26px
+    ); /* Move the circle to the right to indicate the "on" state */
+  }
+
+  .monthly {
+    color: hsl(213, 96%, 18%);
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    position: relative;
+    left: 40px;
+  }
+
+  .yearly {
+    position: relative;
+    left: 40%;
+    color: hsl(231, 11%, 63%);
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+  }
+
+  .button2-wrap {
+    visibility: hidden;
+    background-color: white;
+    width: 100%;
+    min-height: 15vh;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 720px;
+
+    display: flex;
+    flex-direction: row;
+
+  }
+  .btn2 {
+    background-color: hsl(213, 96%, 18%);
+
+    color: white;
+    padding: 5px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    
+     position: absolute;
+     left: 65%;
+   /* left: 60%;
+   top: 725px; */ 
+  }
+
+  .go-back-to-one {
+    color: hsl(231, 11%, 63%);
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  /* /* step3 starts */
+  .step3 {
+    visibility: hidden;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    border: 2px solid hsl(229, 24%, 87%);
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 20px;
+    margin: 5px;
+    width: 95%;
+    position: relative;
+    left: 5px;
+  }
+
+  .checkbox-wrapper input[type="checkbox"] {
+    padding: 10px;
+    width: 10%;
+  }
+
+  .step3-text-wrapper {
+    display: block;
+    position: relative;
+    left: 10px;
+  }
+
+  .step3-first-text {
+    font-family: myFont;
+    color: hsl(213, 96%, 18%);
+    padding: 2px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .step3-second-text {
+    width: 100%;
+    font-size: 12px;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 2px;
+    color: hsl(231, 11%, 63%);
+  }
+
+  .step3-third-text {
+    font-size: 15px;
+    color: hsl(243, 100%, 62%);
+    position: absolute;
+    left: 80%;
+  }
+
+  .button3-wrap {
+    visibility:hidden;
+    background-color: white;
+    width: 100%;
+    min-height: 15vh;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 715px;
+
+    display: flex;
+    flex-direction: row;
+  }
+  .btn3 {
+    background-color: hsl(213, 96%, 18%);
+
+    color: white;
+    padding: 5px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 170px;
+    /* position: absolute;
+    left: 60%;
+    top: 725px; */
+  }
+
+  .go-back-to-two {
+    color: hsl(231, 11%, 63%);
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  /* step4 begins */
+  .step4 {
+    visibility: hidden;
+  }
+
+  .step4-wrapper {
+    width: 90%;
+    min-height: 15vh;
+    height: auto;
+    background-color: hsl(231, 100%, 99%);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    left: 15px;
+  }
+
+ .arcade-target{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+visibility: hidden;
+ }
+
+  .advanced-target{
+    font-family: myFont;
+    color: hsl(213, 96%, 18%);
+    padding: 2px;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    visibility: hidden;
+  }
+.pro-target{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+
+.arcade-yearly{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+.advanced-yearly{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+.pro-yearly{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+.target-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
   left:78%;
+  top: 30px;
+  visibility: hidden;
+}
+#should{
+  border: 1px solid black;
+}
+ 
+.online-service{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  display: none;
+}
+
+.online-service-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 90px;
+  display: none;
+}
+
+.larger-storage{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  display: none;
+}
+.larger-storage-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 130px;
+  display: none;
+}
+.customizable-profile{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  display: none;
+}
+
+.customizable-profile-price{
+  font-family: myFont;
+  color: hsl(213, 96%, 18%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:78%;
+  top: 170px;
+  display: none;
+}
+  .link-to-first-page {
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: hsl(231, 11%, 63%);
+    width: 100%;
+    text-decoration: none;
+  }
+  hr {
+    position: relative;
+    top: 12px;
+  }
+
+  .folake{
+    visibility:hidden;
+  }
+  .emma{
+    visibility:hidden;
+  }
+  .king{
+    visibility:hidden;
+  }
+
+.total{
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+  padding: 10px;
+  color: hsl(231, 11%, 63%);
+  width: 100%;
+  text-decoration: none;
+  visibility: hidden;
+}
+.total-price{
+  font-family: myFont;
+  color: hsl(243, 100%, 62%);
+  padding: 2px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left:74%;
   bottom: 25px;
   visibility: hidden;
 }

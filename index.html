@@ -20,36 +20,44 @@
       <div class="div1">
         <section class="side-bar-icons">
           <div class="ul step1-icon-wrapper">
-            <p class="sidebar-texts one">1</li>   
+            <p class="sidebar-texts one">1</p>
+          
           </div>
           <div class="ul step2-icon-wrapper">
-            <p class="sidebar-texts two">2</li>
+            <p class="sidebar-texts two">2</p>
+         
           </div>
           <div class="ul step3-icon-wrapper">
-            <p class="sidebar-texts three">3</li>
+            <p class="sidebar-texts three">3</p>
+          
           </div>
           <div class="ul step4-icon-wrapper">
-            <p class="sidebar-texts four">4</li>
+            <p class="sidebar-texts four">4</p>
+          </li>
           </div>
         </section>
       </div>
 
 
       <div class="step-info-wrapper">
-        <p class="para">Step 1</p>
-        <p class="more-info">Your info</p>
+        <div class="info-wrapper">
+          <p class="para">Step 1</p>
+          <p class="more-info">Your info</p>
+        </div>
 
+        <div class="info-wrapper">
+          <p class="para">Step 2</p>
+          <p class="more-info">Select plan</p>
+        </div>
 
-        <p class="para">Step 2</p>
-        <p class="more-info">Select plan</p>
-
-
-
-        <p class="para">Step 3</p>
-        <p class="more-info">Add-ons</p>
-
-        <p class="para">Step 4</p>
-        <p class="more-info">Summary</p>
+        <div class="info-wrapper">
+          <p class="para">Step 3</p>
+          <p class="more-info">Add-ons</p>
+        </div>
+        <div class="info-wrapper">
+          <p class="para">Step 4</p>
+          <p class="more-info">Summary</p>
+        </div>
       </div>
     </div>
   </section>
@@ -57,26 +65,26 @@
 
   <!-- Step 1 start -->
 
-    <section class="step1-wrapper step1">
-      <header class="header">
-        <h2 class="h2">Personal info</h2>
-        <p class="header-text">Please provide your name, email address, and phone number.</p>
-      </header>
-      <p class="error-text">
-        (*All fields must be filled*)
-      </p>
-      <form class="form">
-        <label class="label" for="name">Name </label>
-        <input class="input" type="text" placeholder="e.g. Stephen King"/>
+  <section class="step1-wrapper step1">
+    <header class="header">
+      <h2 class="h2">Personal info</h2>
+      <p class="header-text">Please provide your name, email address, and phone number.</p>
+    </header>
+    <p class="error-text">
+      (*All fields must be filled*)
+    </p>
+    <form class="form">
+      <label class="label" for="input">Name </label>
+      <input class="input" type="text" placeholder="e.g. Stephen King" />
 
-        <label class="label" for="email">Email Address</label>
-        <input class="input" type="email" placeholder="e.g. stephenking@lorem.com" />
+      <label class="label" for="input">Email Address</label>
+      <input class="input" type="email" placeholder="e.g. stephenking@lorem.com" />
 
-        <label class="label" for="number">Phone Number</label>
-        <input class="input" type="number" placeholder="e.g. +1 234 567 890"/>
-      </form>
+      <label class="label" for="input">Phone Number</label>
+      <input class="input" type="number" placeholder="e.g. +1 234 567 890" />
+    </form>
 
-    </section>
+  </section>
   </div>
   <div class="button-wrap">
     <button class="btn1">Next Step</button>
@@ -92,7 +100,7 @@
 
       <p class="header-text">You have the option of monthly or yearly billing.</p>
     </header>
-    <section>
+    <section class="components-section">
       <div class="arcade-wrapper selected">
         <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
           <g fill="none" fill-rule="evenodd">
@@ -164,6 +172,7 @@
       <p class="header-text">Add-ons help enhance your gaming experience.</p>
     </header>
     <section class="checkbox-wrapper service-online">
+
       <label for=""></label>
       <input class="checkbox-input" type="checkbox" name="option1" value="Online service" />
       <div class="step3-text-wrapper">
@@ -184,6 +193,7 @@
       <p class="step3-third-text extra2">+$2/mo</p>
       <p class="step3-third-text extra2 emma">+$20/yr</p>
     </section>
+    </div>
     <section class="checkbox-wrapper profile-customizable">
       <label for=""></label>
       <input class="checkbox-input" type="checkbox" name="option2" value="Larger storage" />
@@ -218,13 +228,19 @@
       <p class="pro-yearly">Pro(Yearly)</p>
       <a class="link-to-first-page" href="">Change</a>
       <p class="target-price"></p>
-      <hr/>
-      <p class="online-service"></p>
-      <p class="online-service-price"></p>
-      <p class="larger-storage"></p>
-      <p class="larger-storage-price"></p>
-      <p class="customizable-profile">customizable profile</p>
-      <p class="customizable-profile-price">100</p>
+      <hr />
+      <div id="should">
+        <p class="online-service"></p>
+        <p class="online-service-price"></p>
+      </div>
+      <div id="that">
+        <p class="larger-storage"></p>
+        <p class="larger-storage-price"></p>
+      </div>
+      <div id="scared">
+        <p class="customizable-profile">customizable profile</p>
+        <p class="customizable-profile-price">100</p>
+      </div>
     </div>
 
     <div>
@@ -270,7 +286,7 @@
       </a>.
     </div> -->
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

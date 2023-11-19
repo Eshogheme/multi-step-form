@@ -68,11 +68,14 @@ const emma = document.querySelector(".emma");
 const king = document.querySelector(".king");
 const total = document.querySelector(".total-price");
 const totalText = document.querySelector(".total");
+
 const arcadeContent = arcadeWrapper.querySelector("p:nth-child(2)").textContent;
 const advancedContent =
   advancedWrapper.querySelector("p:nth-child(2)").textContent;
+
 const serviceOnlineContent =
   serviceOnline.querySelector("p:nth-child(1)").textContent;
+
 const serviceOnlinePrice =
   serviceOnline.querySelector("p:nth-child(4)").textContent;
   console.log(serviceOnlinePrice);
@@ -86,7 +89,7 @@ const priceCustomizableContent =
 const priceCustomizablePrice =
   priceCustomizable.querySelector("p:nth-child(4)").textContent;
   const arcadeTotalMonthly = arcadeContent;
-console.log(folake);
+
 
 //This gives the first page its style
 stepOneWrapper.style.backgroundColor = "hsl(206, 94%, 87%)";
@@ -168,6 +171,8 @@ goBackOne.addEventListener("click", () => {
 // Add the prices of selected options to the total
 
 //This is the first wrapper that holds the contents for the arcade aspect
+let storageLineClicked = false
+let serviceOnlineClicked = false
 arcadeWrapper.addEventListener("click", () => {
   arcadeWrapper.style.border = "2px solid hsl(213, 96%, 18%)";
   arcadeWrapper.style.backgroundColor = "hsl(206, 94%, 87%)";
@@ -187,9 +192,7 @@ arcadeWrapper.addEventListener("click", () => {
   }
 
 
-
-let serviceOnlineClicked = false
-let storageLineClicked = false;
+ 
   if ((step4.style.visibility = "visible")) {
     arcadeTarget.style.visibility = "visible";
     step4.style.zIndex = "-10";
@@ -198,7 +201,7 @@ let storageLineClicked = false;
 
     serviceOnline.addEventListener("click", () => {
       console.log(serviceOnline.textContent);
-      serviceOnlineClicked == true
+      serviceOnlineClicked = true
       const num1 = parseFloat(
         arcadeTotalMonthly.replace("$", "").replace("/mo", "")
       );
@@ -210,45 +213,12 @@ let storageLineClicked = false;
       total.innerHTML = formattedResult;
       total.style.visibility = "visible";
       totalText.style.visibility = "visible";
-      
+      calculateTotal();
     });
-   };
-
-
-
-
-
-if(serviceOnlineClicked = false && storageLineClicked === true){
-  if ((step4.style.visibility = "visible")) {
-    step4.style.zIndex = "-10";
-    onlineService.innerHTML = serviceOnlineContent;
-    onlineService.style.visibility = "visible";
-    onlineServicePrice.innerHTML = serviceOnlinePrice;
-    onlineServicePrice.style.visibility = "visible";
-
-     const arcadeTotalMonthly = arcadeContent;
-
-// The total if everthings is clicked
-const num1 = parseFloat(
-  arcadeTotalMonthly.replace("$", "").replace("/mo", "")
-);
-
-const num3 = parseFloat(
-  storageLinePrice.replace("$", "").replace("/mo", "")
-);
-
-const softResult = num1 + num3;
-const formatResult = `$${softResult}/mo`;
-total.innerHTML = formatResult;
-total.style.visibility = "visible";
-totalText.style.visibility = "visible";
-  }
-}
-
- 
+   
 storageLine.addEventListener("click", () => {
   console.log(storageLinePrice);
-    storageLineClicked == true
+    storageLineClicked = true
 
     const num1 = parseFloat(
       arcadeTotalMonthly.replace("$", "").replace("/mo", "")
@@ -260,10 +230,12 @@ storageLine.addEventListener("click", () => {
     largerStorage.innerHTML = storageLineContent;
     largerStorage.style.visibility = "visible";
     largerStoragePrice.innerHTML = storageLinePrice;
-    largerStoragePrice.style.visibility = "visible";
-
+    largerStoragePrice.style.display= "block";
+    
+    largerStoragePrice.top = "90px";
      const num3 = parseFloat(
     storageLinePrice.replace("$", "").replace("/mo", "")
+    
   );
 
   const newResult = num1 + num3;
@@ -271,78 +243,64 @@ storageLine.addEventListener("click", () => {
   total.innerHTML = formatResult;
   total.style.visibility = "visible";
   totalText.style.visibility = "visible";
-
+  calculateTotal();
 });
 
-// if( storageLineClicked === true && serviceOnlineClicked === true){
 
+priceCustomizable.addEventListener("click", () => {
+  console.log(priceCustomizable.textContent);
+ 
+  
+  const num1 = parseFloat(
+    arcadeTotalMonthly.replace("$", "").replace("/mo", "")
+  );
+  const num2 = parseFloat(
+    serviceOnlinePrice.replace("$", "").replace("/mo", "")
+  );
+  
+   const num3 = parseFloat(
+  storageLinePrice.replace("$", "").replace("/mo", ""))
+  
+  const num4 = parseFloat(
+    priceCustomizablePrice.replace("$", "").replace("/mo", ""))
+    customizableProfile.innerHTML = priceCustomizableContent;
+    customizableProfile.style.visibility = "visible";
+    customizableProfilePrice.innerHTML = priceCustomizablePrice;
+    customizableProfilePrice.style.visibility = "visible";
+  
+    const newResult = num1 + num4;
+  const formatResult = `$${newResult}/mo`;
+  total.innerHTML = formatResult;
+  total.style.visibility = "visible";
+  totalText.style.visibility = "visible";
+});
+  
 
-//   const num1 = parseFloat(
-//     arcadeTotalMonthly.replace("$", "").replace("/mo", "")
-//   );
-//   const num2 = parseFloat(
-//     serviceOnlinePrice.replace("$", "").replace("/mo", "")
-//   );
+function calculateTotal() {
+  if (serviceOnlineClicked && storageLineClicked) {
+    const num1 = parseFloat(
+      arcadeTotalMonthly.replace("$", "").replace("/mo", "")
+    );
+    const num2 = parseFloat(
+      serviceOnlinePrice.replace("$", "").replace("/mo", "")
+    );
+    const num3 = parseFloat(
+      storageLinePrice.replace("$", "").replace("/mo", "")
+    );
 
-//   const num3 = parseFloat(
-//     storageLinePrice.replace("$", "").replace("/mo", "")
-//   )
+    largerStorage.innerHTML = storageLineContent;
+    largerStorage.style.visibility = "visible";
+    largerStoragePrice.innerHTML = storageLinePrice;
+    largerStoragePrice.style.visibility = "visible";
 
-
-
-// const softResult = num1 + num2 + num3;
-// const formatResult = `$${softResult}/mo`;
-// total.innerHTML = formatResult;
-// total.style.visibility = "visible";
-// totalText.style.visibility = "visible";
-
-
-//   }
-
-//   if(serviceOnlineClicked = true && storageLineClicked == false){
-//     const num1 = parseFloat(
-//       arcadeTotalMonthly.replace("$", "").replace("/mo", "")
-//     );
-//     const num2 = parseFloat(
-//       serviceOnlinePrice.replace("$", "").replace("/mo", "")
-//     );
-
-//     const result = num1 + num2;
-//     const formattedResult = `$${result}/mo`;
-//     total.innerHTML = formattedResult;
-//     total.style.visibility = "visible";
-//     totalText.style.visibility = "visible";
-
-//   }
-
-// // if(serviceOnlineClicked = true && storageLineClicked == true){
-//   const num1 = parseFloat(
-//     arcadeTotalMonthly.replace("$", "").replace("/mo", "")
-//   );
-//   const num2 = parseFloat(
-//     serviceOnlinePrice.replace("$", "").replace("/mo", "")
-//   );
-//   const num3 = parseFloat(
-//     storageLinePrice.replace("$", "").replace("/mo", "")
-//   );
-//   const madResult = num1 + num2 + num3;
-//   const formatResult = `$${madResult}/mo`;
-//   total.innerHTML = formatResult;
-//   total.style.visibility = "visible";
-//   totalText.style.visibility = "visible";
-// }
-
-// if(serviceOnlineClicked === false && storageLineClicked === true){
-//   const num3 = parseFloat(
-//     storageLinePrice.replace("$", "").replace("/mo", "")
-//   );
-//   const newResult = num1 + num3;
-//   const formatResult = `$${newResult}/mo`;
-//   total.innerHTML = formatResult;
-//   total.style.visibility = "visible";
-//   totalText.style.visibility = "visible";
-// }
-
+    const newResult = num1 + num2 + num3;
+    const formatResult = `$${newResult}/mo`;
+    total.innerHTML = formatResult;
+    total.style.visibility = "visible";
+    totalText.style.visibility = "visible";
+  }
+}
+  }
 
     });
 
@@ -668,12 +626,12 @@ serviceOnline.addEventListener("click", () => {
   if ((step4.style.visibility = "visible")) {
     step4.style.zIndex = "-10";
     onlineService.innerHTML = serviceOnlineContent;
-    onlineService.style.visibility = "visible";
+    onlineService.style.display = "block";
     onlineServicePrice.innerHTML = serviceOnlinePrice;
-    onlineServicePrice.style.visibility = "visible";
+    onlineServicePrice.style.display= "block";
   } else {
-    onlineService.style.visibility = "hidden";
-    onlineServicePrice.style.visibility = "hidden";
+    onlineService.style.display = "none";
+    onlineServicePrice.style.display = "none";
   }
 });
 
@@ -683,9 +641,9 @@ storageLine.addEventListener("click", () => {
   if ((step4.style.visibility = "visible")) {
     step4.style.zIndex = "-10";
     largerStorage.innerHTML = storageLineContent;
-    largerStorage.style.visibility = "visible";
+    largerStorage.style.display = "block";
     largerStoragePrice.innerHTML = storageLinePrice;
-    largerStoragePrice.style.visibility = "visible";
+    largerStoragePrice.style.display = "block";
   }
 });
 
@@ -699,9 +657,9 @@ priceCustomizable.addEventListener("click", () => {
   if ((step4.style.visibility = "visible")) {
     step4.style.zIndex = "-10";
     customizableProfile.innerHTML = priceCustomizableContent;
-    customizableProfile.style.visibility = "visible";
+    customizableProfile.style.display = "block";
     customizableProfilePrice.innerHTML = priceCustomizablePrice;
-    customizableProfilePrice.style.visibility = "visible";
+    customizableProfilePrice.style.display = "block";
   }
 });
 
