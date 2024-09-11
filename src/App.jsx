@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import { InputSection } from "./InputSection";
+import "./App.css";
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+useEffect(()=>{
+const firstLi= document.querySelector('.first-li');
+if(firstLi){
+  firstLi.classList.add("active");
+  console.log("new color")
+}
+
+const form = document.querySelector('form')
+const btn = document.querySelector("form-btn");
+const handleClick = ()=>{
+console.log(form)
+}
+if(btn){
+  btn.addEventListener('click', handleClick);
+}
+}
+,[])
+
+
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+   <section className="links-ul-wrapper">
+    <ul className="links-wrapper">
+      <li className="links first-li">1</li>
+      <li className="links">2</li>
+      <li className="links">3</li>
+      <li className="links">4</li>
+    </ul>
+   </section>
+    <InputSection />
+    <footer className='btn-wrapper'>
+    <button className='form-btn' >
+        Next Step
+      
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+</footer>
+  </>
+);
 }
 
-export default App
+export default App;
