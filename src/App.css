@@ -126,7 +126,7 @@ body {
     padding: 0.5em;
     border-radius: 1em;
     height: 12vh;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
   svg {
     margin-top: 0.5em;
@@ -143,9 +143,18 @@ body {
     color: hsl(231, 11%, 63%);
   }
 
-  .yearly {
+  .yearly-wrapper {
+    position: relative;
+    top: -3.2em;
+    color: hsl(231, 11%, 63%);
+    font-size: 12px;
     display: none;
   }
+
+.yearly-discount{
+    color: hsl(213, 96%, 18%) ;
+}
+
 
   .monthly-yearly-wrapper {
     display: flex;
