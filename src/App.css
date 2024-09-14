@@ -163,36 +163,41 @@ body {
     background-color: hsl(229, 24%, 87%);
     border-radius: 1em;
     height:5vh;
-  }
-  .toggle-btn {
-    padding: 0.7em 1.7em;
-    font-size: 18px;
-    color: white;
-    background-color: hsl(213, 96%, 18%);
-    border: none;
-    border-radius: 5em;
-    cursor: pointer;
-    overflow: hidden;
-    transition: color 0.4s;
-    margin-left: 1em;
-    margin-right: 1em;
-  }
+  }/* Button styles */
+.toggle-btn {
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  color: white;
+  background-color: hsl(213, 96%, 18%);
+  border: none;
+  border-radius: 5em;
+  cursor: pointer;
+  position: relative;  /* Added relative positioning */
+  overflow: hidden;
+  transition: color 0.4s;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
-  .toggle-btn::before {
-    content: "";
-    position: absolute;
-    
-    transform: translateY(-50%) translateX(-145%);
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    transition: left 0.5s ease;
-    z-index: 0;
-  }
-  .toggle-btn::before {
-    left: calc(100% -30px);
-  }
+/* Circle inside the button */
+.toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;  /* Start position of the circle */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.5s ease;  /* Smooth sliding transition */
+}
+
+/* Active state */
+.toggle-btn.active::before {
+  left: calc(100% - 23px);  /* Move the circle to the right */
+}
+
   .step2btn-wrapper {
     background-color: white;
     padding: 2em;
