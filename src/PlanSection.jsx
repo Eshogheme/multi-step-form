@@ -15,6 +15,11 @@ export const PlanSection = () => {
     const arcadeMonthlyRef = useRef(null);
     const advancedMonthlyRef = useRef(null);
     const proMonthlyRef = useRef(null);
+    const monthlyPriceRef = useRef(null);
+    const monthlyAdvancedPriceRef = useRef(null)
+    const yearlyAdvancedRef = useRef(null)
+    const monthlyProRef = useRef(null)
+    const yearlyProRef = useRef(null)
     const yearlyRef = useRef(null);
     const [activeRef, setActiveRef] = useState('arcade')
     const [isActive ,setIsActive] = useState(false);
@@ -57,7 +62,7 @@ export const PlanSection = () => {
             if(proRef.current){
                 proRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
                 proRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-            console.log(proMonthlyRef.current.textContent);
+                console.log(proMonthlyRef.current.textContent);
             }
             if (advancedRef.current) {
                 advancedRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
@@ -74,12 +79,19 @@ const sliderCheck = ()=>{
     setIsActive(!isActive);
 
     if(!isActive){
-      console.log(yearlyRef.current)  
-      arcadeMonthlyRef.current.style.display = "none";
-
+      monthlyPriceRef.current.style.display = "none";
+        yearlyRef.current.style.display = "block";
+        monthlyAdvancedPriceRef.current.style.display = "none";
+        yearlyAdvancedRef.current.style.display = "block";
+        monthlyProRef.current.style.display = "none";
+        yearlyProRef.current.style.display = "block";
     }else{
-        console.log("HEHEHEHEHEHEHEHEHEHE") 
-        arcadeMonthlyRef.current.style.display = "block";
+        yearlyRef.current.style.display = "none";
+        monthlyPriceRef.current.style.display = "block";
+        monthlyAdvancedPriceRef.current.style.display = "block";
+        yearlyAdvancedRef.current.style.display = "none";
+        monthlyProRef.current.style.display = "block";
+        yearlyProRef.current.style.display = "none";
     }
 }
 
@@ -112,7 +124,7 @@ onClick={()=> handleToggle('arcade')}
 </p>
 <p 
 className='monthly'
-
+ref={monthlyPriceRef}
 >
     $9/mo
 </p>
@@ -144,11 +156,15 @@ onClick={()=>handleToggle('advanced')}
 <p className='para-head'>
     Advanced
     </p>
-<p className='monthly'>
+<p className='monthly'
+ref={monthlyAdvancedPriceRef}
+>
     $12/mo
 </p>
 </div>
-<div className="yearly-wrapper">
+<div className="yearly-wrapper"
+ref={yearlyAdvancedRef}
+>
 <p className='yearly'>
     $120/yr
 </p>
@@ -174,11 +190,15 @@ onClick={()=> handleToggle("pro")}
 <p className='para-head'>
     Pro
     </p>
-<p className='monthly'>
+<p className='monthly'
+ref={monthlyProRef}
+>
     $15/mo
 </p>
 </div>
-<div className="yearly-wrapper">
+<div className="yearly-wrapper"
+ref={yearlyProRef}
+>
 <p className='yearly'>
     $150/yr
 </p>
