@@ -9,6 +9,10 @@ export const PlanSection = () => {
         navigate('/')
     }
 
+    const goToStepThree = ()=>{
+        navigate("/step3")
+    }
+
     const arcadeRef = useRef(null);
     const advancedRef = useRef(null);
     const proRef = useRef(null);
@@ -25,75 +29,100 @@ export const PlanSection = () => {
     const [isActive ,setIsActive] = useState(false);
     
 
+    const sliderCheck = ()=>{
+        setIsActive(!isActive);
+    
+        if(!isActive){
+          monthlyPriceRef.current.style.display = "none";
+            yearlyRef.current.style.display = "block";
+            monthlyAdvancedPriceRef.current.style.display = "none";
+            yearlyAdvancedRef.current.style.display = "block";
+            monthlyProRef.current.style.display = "none";
+            yearlyProRef.current.style.display = "block";
+        }else{
+            yearlyRef.current.style.display = "none";
+            monthlyPriceRef.current.style.display = "block";
+            monthlyAdvancedPriceRef.current.style.display = "block";
+            yearlyAdvancedRef.current.style.display = "none";
+            monthlyProRef.current.style.display = "block";
+            yearlyProRef.current.style.display = "none";
+        }
+    }
+    
     const handleToggle = (refName) => {
         setActiveRef(refName);
       
         if (refName === "arcade") {
-          if (arcadeRef.current) {
-            arcadeRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
-            arcadeRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-            console.log(arcadeMonthlyRef.current.textContent);
-          }
-      
-          if (advancedRef.current) {
-            advancedRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-            advancedRef.current.style.backgroundColor = "white";
-          }
-
-          if(proRef.current){
-            proRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-            proRef.current.style.backgroundColor = "white";
-          }
-        } else if (refName === "advanced") {
-          if (advancedRef.current) {
-            advancedRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
-            advancedRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-            console.log(advancedMonthlyRef.current.textContent);
-          }
-          if (arcadeRef.current) {
-            arcadeRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-            arcadeRef.current.style.backgroundColor = "white";
-          }
-          if(proRef.current){
-            proRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-            proRef.current.style.backgroundColor = "white";
-          }
-        }else if(refName === "pro"){
-            if(proRef.current){
-                proRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
-                proRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-                console.log(proMonthlyRef.current.textContent);
+            if (arcadeRef.current) {
+                // Check if slider is active for yearly billing
+                if (isActive) {
+                    console.log(yearlyRef.current.textContent); // Log yearly content
+                } else {
+                    console.log(arcadeMonthlyRef.current.textContent); // Log monthly content
+                }
+    
+                // Set styles for Arcade plan
+                arcadeRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
+                arcadeRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
             }
+    
+            // Reset styles for Advanced and Pro plans
             if (advancedRef.current) {
                 advancedRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
                 advancedRef.current.style.backgroundColor = "white";
-              }
-              if (arcadeRef.current) {
+            }
+            if (proRef.current) {
+                proRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
+                proRef.current.style.backgroundColor = "white";
+            }
+        } else if (refName === "advanced") {
+            if (advancedRef.current) {
+                // Similar conditional logging for advanced
+                if (isActive) {
+                    console.log(yearlyAdvancedRef.current.textContent);
+                } else {
+                    console.log(advancedMonthlyRef.current.textContent);
+                }
+    
+                // Set styles for Advanced plan
+                advancedRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
+                advancedRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
+            }
+    
+            // Reset styles for Arcade and Pro plans
+            if (arcadeRef.current) {
                 arcadeRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
                 arcadeRef.current.style.backgroundColor = "white";
-              }
+            }
+            if (proRef.current) {
+                proRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
+                proRef.current.style.backgroundColor = "white";
+            }
+        } else if (refName === "pro") {
+            if (proRef.current) {
+                // Similar conditional logging for pro
+                if (isActive) {
+                    console.log(yearlyProRef.current.textContent);
+                } else {
+                    console.log(proMonthlyRef.current.textContent);
+                }
+    
+                // Set styles for Pro plan
+                proRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
+                proRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
+            }
+    
+            // Reset styles for Arcade and Advanced plans
+            if (advancedRef.current) {
+                advancedRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
+                advancedRef.current.style.backgroundColor = "white";
+            }
+            if (arcadeRef.current) {
+                arcadeRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
+                arcadeRef.current.style.backgroundColor = "white";
+            }
         }
-      };
-      
-const sliderCheck = ()=>{
-    setIsActive(!isActive);
-
-    if(!isActive){
-      monthlyPriceRef.current.style.display = "none";
-        yearlyRef.current.style.display = "block";
-        monthlyAdvancedPriceRef.current.style.display = "none";
-        yearlyAdvancedRef.current.style.display = "block";
-        monthlyProRef.current.style.display = "none";
-        yearlyProRef.current.style.display = "block";
-    }else{
-        yearlyRef.current.style.display = "none";
-        monthlyPriceRef.current.style.display = "block";
-        monthlyAdvancedPriceRef.current.style.display = "block";
-        yearlyAdvancedRef.current.style.display = "none";
-        monthlyProRef.current.style.display = "block";
-        yearlyProRef.current.style.display = "none";
-    }
-}
+    };
 
 return(
     <>
@@ -230,7 +259,10 @@ ref={yearlyProRef}
         >
             Go Back
         </button>
-    <button className='form-btn'>
+    <button 
+    className='form-btn'
+    onClick={goToStepThree}
+    >
         Next Step
         </button>
 </footer>
