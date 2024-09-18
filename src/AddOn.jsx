@@ -26,7 +26,7 @@ export const AddOn = () => {
       if (!isOnlineActive) {
         onlineRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
         onlineRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-        console.log( onlineMontlyPriceRef.current.textContent)
+        console.log(onlineMontlyPriceRef.current.textContent);
       } else {
         onlineRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
         onlineRef.current.style.backgroundColor = "white";
@@ -38,7 +38,7 @@ export const AddOn = () => {
       if (!isLargerActive) {
         largerRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
         largerRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-        console.log(largerMontlyPriceRef.current.textContent)
+        console.log(largerMontlyPriceRef.current.textContent);
       } else {
         largerRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
         largerRef.current.style.backgroundColor = "white";
@@ -50,7 +50,7 @@ export const AddOn = () => {
       if (!isCustomizableActive) {
         customizableRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
         customizableRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-        console.log(customizeMonthlyPriceRef.current.textContent)
+        console.log(customizeMonthlyPriceRef.current.textContent);
       } else {
         customizableRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
         customizableRef.current.style.backgroundColor = "white";
@@ -80,10 +80,12 @@ export const AddOn = () => {
               <h4>Online service</h4>
               <p className="add-on-para">Access to multiplayer games</p>
             </div>
-            <div 
-            className="add-on-amount"
-            ref={onlineMontlyPriceRef}
-            >+$1/mo</div>
+            <div className="add-on-amount" ref={onlineMontlyPriceRef}>
+              +$1/mo
+            </div>
+            <div>
+              <p className="add-on-amount-yearly">+$10/yr</p>
+            </div>
           </div>
 
           <div className="add-on-wrapper" ref={largerRef}>
@@ -97,10 +99,12 @@ export const AddOn = () => {
               <h4>Larger storage</h4>
               <p className="add-on-para">Extra 1TB of cloud save</p>
             </div>
-            <div 
-            className="add-on-amount"
-            ref={largerMontlyPriceRef}
-            >+$2/mo</div>
+            <div className="add-on-amount" ref={largerMontlyPriceRef}>
+              +$2/mo
+            </div>
+            <div>
+              <p className="add-on-amount-yearly">+$20/yr</p>
+            </div>
           </div>
 
           <div className="add-on-wrapper" ref={customizableRef}>
@@ -114,10 +118,13 @@ export const AddOn = () => {
               <h4>Customizable profile</h4>
               <p className="add-on-para">Custom theme on your profile</p>
             </div>
-            <div 
-            className="add-on-amount"
-            ref={customizeMonthlyPriceRef}
-            >+$2/mo</div>
+            <div className="add-on-amount" ref={customizeMonthlyPriceRef}>
+              +$2/mo
+            </div>
+
+            <div>
+              <p className="add-on-amount-yearly">+$20/yr</p>
+            </div>
           </div>
         </section>
       </section>
