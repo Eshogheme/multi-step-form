@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useRef} from "react";
 import { useNavigate } from "react-router-dom";
+import { AddOn } from './AddOn';
 import "./App.css";
 
 export const PlanSection = () => {
@@ -266,6 +267,8 @@ ref={yearlyProRef}
         Next Step
         </button>
 </footer>
+
+
 </>
 )
 }

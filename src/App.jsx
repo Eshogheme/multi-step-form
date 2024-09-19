@@ -10,10 +10,7 @@ function App() {
   return (
     <>
       <Router>
-       
         <NavSection />
-        
-        
         <Routes>
           <Route path="/" element={<InputSection />} /> 
           <Route path="/step2" element={<PlanSection />} />

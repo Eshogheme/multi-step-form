@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-export const AddOn = () => {
+export const AddOn = ({isYearlyActive}) => {
   const navigate = useNavigate();
   const onlineRef = useRef(null);
   const largerRef = useRef(null);
@@ -80,11 +80,17 @@ export const AddOn = () => {
               <h4>Online service</h4>
               <p className="add-on-para">Access to multiplayer games</p>
             </div>
-            <div className="add-on-amount" ref={onlineMontlyPriceRef}>
+            <div className="add-on-amount" 
+            ref={onlineMontlyPriceRef}
+            style={{display : isYearlyActive ? "none" : 'block'}}
+            >
               +$1/mo
             </div>
-            <div>
-              <p className="add-on-amount-yearly">+$10/yr</p>
+            <div 
+            className="add-on-amount-yearly"
+            style={{display : isYearlyActive ? "block" : 'none'}}
+            >
+             +$10/yr
             </div>
           </div>
 

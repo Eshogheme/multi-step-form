@@ -6,7 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: hsl(206, 94%, 87%);
 }
 
@@ -271,7 +271,8 @@ padding: 0.3em;
   font-size: 12px;
   color: hsl(243, 100%, 62%);
   margin-top: 2.5em;
-  margin-left: 2em;
+ display: flex;
+ flex-direction: column;
 
 }
 
