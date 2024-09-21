@@ -5,6 +5,7 @@ import { InputSection } from "./InputSection";
 import { PricingProvider } from "./PricingContext";
 import { PlanSection } from "./PlanSection";
 import { AddOn } from "./AddOn";
+import { FinishingUpSection } from "./FinishingUpSection";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<InputSection />} />
             <Route path="/step2" element={<PlanSection />} />
             <Route path="/step3" element={<AddOn />} />
+            <Route path="/step4" element={<FinishingUpSection />} />
           </Routes>
         </PricingProvider>
       </Router>

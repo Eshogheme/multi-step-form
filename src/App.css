@@ -216,7 +216,9 @@ body {
     color: hsl(231, 11%, 63%);
   }
 
-  .step3-wrapper{
+  .step3-wrapper,
+  .step4-wrapper
+  {
     width: 89%;
     height: 65vh;
     background-color: white;
@@ -228,11 +230,15 @@ body {
     bottom: 3.5em;
     border-radius: 0.7em;
   }
-  .step3-header-para{
+  .step3-header-para,
+  .step4-header-para
+  {
     color: hsl(231, 11%, 63%);
   }
 
-  .step3btn-wrapper {
+  .step3btn-wrapper,
+  .step4btn-wrapper
+  {
     background-color: white;
     padding: 2em;
     display: flex;
@@ -282,4 +288,9 @@ padding: 0.3em;
   margin-top: 2.5em;
   display: none;
 }
+
+
+
+
+
 }

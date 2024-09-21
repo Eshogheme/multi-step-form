@@ -24,6 +24,9 @@ export const AddOn = () => {
     navigate("/step2");
   };
 
+  const goToFour = ()=>{
+    navigate("/step4")
+  }
   const handleCheckboxChange = (addOnType) => {
     let yearlyPrice = "";
 
@@ -171,7 +174,7 @@ export const AddOn = () => {
         <button className="goback-btn" onClick={goBackToTwo}>
           Go Back
         </button>
-        <button className="form-btn">Next Step</button>
+        <button className="form-btn" onClick={goToFour}>Next Step</button>
       </footer>
     </>
   );

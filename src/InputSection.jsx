@@ -1,13 +1,48 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 export const InputSection = () => {
   const navigate = useNavigate();
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneRef = useRef(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
 
   const handleClick = () => {
-    navigate("/step2");
+    let isValid = true;
+
+    // Check name
+    if (name.trim() === "") {
+      nameRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
+      isValid = false;
+    } else {
+      nameRef.current.style.border = ""; // Reset the border style
+    }
+
+    // Check email
+    if (email.trim() === "") {
+      emailRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
+      isValid = false;
+    } else {
+      emailRef.current.style.border = ""; // Reset the border style
+    }
+
+    // Check phone number
+    if (phonenumber.trim() === "") {
+      phoneRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
+      isValid = false;
+    } else {
+      phoneRef.current.style.border = ""; // Reset the border style
+    }
+
+    // Navigate only if all inputs are valid
+    if (isValid) {
+      navigate("/step2");
+    }
   };
 
   return (
@@ -15,9 +50,8 @@ export const InputSection = () => {
       <section className="step1-wrapper">
         <header>
           <h2 id="header-h1">Personal info</h2>
-
           <p id="header-para">
-            Please provide your name, email adderss, and phone number
+            Please provide your name, email address, and phone number
           </p>
         </header>
         <form action="" className="form">
@@ -28,15 +62,21 @@ export const InputSection = () => {
             name="username"
             placeholder="e.g Stephen King"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            ref={nameRef}
           />
 
-          <label htmlFor="email"> Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             className="input"
             name="email"
             placeholder="e.g stephenking@gmail.com"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            ref={emailRef}
           />
 
           <label htmlFor="phonenumber">Phone Number</label>
@@ -46,6 +86,9 @@ export const InputSection = () => {
             name="phonenumber"
             placeholder="e.g +1 234 567 890"
             required
+            value={phonenumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            ref={phoneRef}
           />
         </form>
       </section>
