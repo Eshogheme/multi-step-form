@@ -1,7 +1,7 @@
 import React from 'react';
-import {useState, useRef} from "react";
+import {useState, useRef, useContext} from "react";
 import { useNavigate } from "react-router-dom";
-import { AddOn } from './AddOn';
+import { PricingContext } from './PricingContext'; 
 import "./App.css";
 
 export const PlanSection = () => {
@@ -13,6 +13,8 @@ export const PlanSection = () => {
     const goToStepThree = ()=>{
         navigate("/step3")
     }
+
+    const { isYearlyActive, togglePricing } = useContext(PricingContext);
 
     const arcadeRef = useRef(null);
     const advancedRef = useRef(null);
@@ -27,13 +29,13 @@ export const PlanSection = () => {
     const yearlyProRef = useRef(null)
     const yearlyRef = useRef(null);
     const [activeRef, setActiveRef] = useState('arcade')
-    const [isActive ,setIsActive] = useState(false);
+   
     
 
     const sliderCheck = ()=>{
-        setIsActive(!isActive);
+        togglePricing()
     
-        if(!isActive){
+        if(!isYearlyActive){
           monthlyPriceRef.current.style.display = "none";
             yearlyRef.current.style.display = "block";
             monthlyAdvancedPriceRef.current.style.display = "none";
@@ -52,22 +54,15 @@ export const PlanSection = () => {
     
     const handleToggle = (refName) => {
         setActiveRef(refName);
-      
+        const priceRef = isYearlyActive ? yearlyRef : monthlyPriceRef;
         if (refName === "arcade") {
             if (arcadeRef.current) {
-                // Check if slider is active for yearly billing
-                if (isActive) {
-                    console.log(yearlyRef.current.textContent); // Log yearly content
-                } else {
-                    console.log(arcadeMonthlyRef.current.textContent); // Log monthly content
-                }
-    
-                // Set styles for Arcade plan
+                isActive ? console.log(yearlyRef.current.textContent) : console.log(arcadeMonthlyRef.current.textContent)
                 arcadeRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
                 arcadeRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
             }
     
-            // Reset styles for Advanced and Pro plans
+            
             if (advancedRef.current) {
                 advancedRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
                 advancedRef.current.style.backgroundColor = "white";
@@ -78,14 +73,7 @@ export const PlanSection = () => {
             }
         } else if (refName === "advanced") {
             if (advancedRef.current) {
-                // Similar conditional logging for advanced
-                if (isActive) {
-                    console.log(yearlyAdvancedRef.current.textContent);
-                } else {
-                    console.log(advancedMonthlyRef.current.textContent);
-                }
-    
-                // Set styles for Advanced plan
+                isActive  ? console.log(yearlyAdvancedRef.current.textContent) : console.log(advancedMonthlyRef.current.textContent);
                 advancedRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
                 advancedRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
             }
@@ -101,14 +89,7 @@ export const PlanSection = () => {
             }
         } else if (refName === "pro") {
             if (proRef.current) {
-                // Similar conditional logging for pro
-                if (isActive) {
-                    console.log(yearlyProRef.current.textContent);
-                } else {
-                    console.log(proMonthlyRef.current.textContent);
-                }
-    
-                // Set styles for Pro plan
+                isActive   ? console.log(yearlyProRef.current.textContent) : console.log(proMonthlyRef.current.textContent);
                 proRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
                 proRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
             }
@@ -244,8 +225,8 @@ ref={yearlyProRef}
         Monthly
     </p>
     <button 
-      className={`toggle-btn ${isActive ? 'active' : ''}`} 
-    onClick={sliderCheck}
+      className={`toggle-btn ${isYearlyActive ? "active" : ""}`} 
+      onClick={sliderCheck}
     ></button>
     <p>
         Yearly

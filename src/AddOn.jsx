@@ -1,17 +1,21 @@
-import React, { useRef } from "react";
-import { useState } from "react";
+import React, { useRef, useContext, useState } from "react";
+import { PricingContext } from "./PricingContext";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-export const AddOn = ({isYearlyActive}) => {
+export const AddOn = () => {
   const navigate = useNavigate();
+  const { isYearlyActive } = useContext(PricingContext);
   const onlineRef = useRef(null);
   const largerRef = useRef(null);
   const customizableRef = useRef(null);
   const onlineMontlyPriceRef = useRef(null);
   const largerMontlyPriceRef = useRef(null);
   const customizeMonthlyPriceRef = useRef(null);
-  // Separate states for each checkbox
+  const onlineYearlyPriceRef = useRef(null);
+  const largerYearlyPriceRef = useRef(null);
+  const customizeYearlyPriceRef = useRef(null);
+
   const [isOnlineActive, setIsOnlineActive] = useState(false);
   const [isLargerActive, setIsLargerActive] = useState(false);
   const [isCustomizableActive, setIsCustomizableActive] = useState(false);
@@ -21,41 +25,47 @@ export const AddOn = ({isYearlyActive}) => {
   };
 
   const handleCheckboxChange = (addOnType) => {
+    let yearlyPrice = "";
+
     if (addOnType === "online") {
       setIsOnlineActive(!isOnlineActive);
-      if (!isOnlineActive) {
-        onlineRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
-        onlineRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-        console.log(onlineMontlyPriceRef.current.textContent);
-      } else {
-        onlineRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-        onlineRef.current.style.backgroundColor = "white";
-      }
+      yearlyPrice = isYearlyActive
+        ? onlineYearlyPriceRef.current.textContent
+        : onlineMontlyPriceRef.current.textContent;
+      onlineRef.current.style.border = !isOnlineActive
+        ? "1px solid hsl(243, 100%, 62%)"
+        : "1px solid hsl(229, 24%, 87%)";
+      onlineRef.current.style.backgroundColor = !isOnlineActive
+        ? "hsl(231, 100%, 99%)"
+        : "white";
     }
 
     if (addOnType === "larger") {
       setIsLargerActive(!isLargerActive);
-      if (!isLargerActive) {
-        largerRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
-        largerRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-        console.log(largerMontlyPriceRef.current.textContent);
-      } else {
-        largerRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-        largerRef.current.style.backgroundColor = "white";
-      }
+      yearlyPrice = isYearlyActive
+        ? largerYearlyPriceRef.current.textContent
+        : largerMontlyPriceRef.current.textContent;
+      largerRef.current.style.border = !isLargerActive
+        ? "1px solid hsl(243, 100%, 62%)"
+        : "1px solid hsl(229, 24%, 87%)";
+      largerRef.current.style.backgroundColor = !isLargerActive
+        ? "hsl(231, 100%, 99%)"
+        : "white";
     }
 
     if (addOnType === "customize") {
       setIsCustomizableActive(!isCustomizableActive);
-      if (!isCustomizableActive) {
-        customizableRef.current.style.border = "1px solid hsl(243, 100%, 62%)";
-        customizableRef.current.style.backgroundColor = "hsl(231, 100%, 99%)";
-        console.log(customizeMonthlyPriceRef.current.textContent);
-      } else {
-        customizableRef.current.style.border = "1px solid hsl(229, 24%, 87%)";
-        customizableRef.current.style.backgroundColor = "white";
-      }
+      yearlyPrice = isYearlyActive
+        ? customizeYearlyPriceRef.current.textContent
+        : customizeMonthlyPriceRef.current.textContent;
+      customizableRef.current.style.border = !isCustomizableActive
+        ? "1px solid hsl(243, 100%, 62%)"
+        : "1px solid hsl(229, 24%, 87%)";
+      customizableRef.current.style.backgroundColor = !isCustomizableActive
+        ? "hsl(231, 100%, 99%)"
+        : "white";
     }
+    isYearlyActive ? console.log(yearlyPrice) : console.log(yearlyPrice);
   };
 
   return (
@@ -80,17 +90,19 @@ export const AddOn = ({isYearlyActive}) => {
               <h4>Online service</h4>
               <p className="add-on-para">Access to multiplayer games</p>
             </div>
-            <div className="add-on-amount" 
-            ref={onlineMontlyPriceRef}
-            style={{display : isYearlyActive ? "none" : 'block'}}
+            <div
+              className="add-on-amount"
+              ref={onlineMontlyPriceRef}
+              style={{ display: isYearlyActive ? "none" : "block" }}
             >
               +$1/mo
             </div>
-            <div 
-            className="add-on-amount-yearly"
-            style={{display : isYearlyActive ? "block" : 'none'}}
+            <div
+              className="add-on-amount-yearly"
+              ref={onlineYearlyPriceRef}
+              style={{ display: isYearlyActive ? "block" : "none" }}
             >
-             +$10/yr
+              +$10/yr
             </div>
           </div>
 
@@ -105,11 +117,21 @@ export const AddOn = ({isYearlyActive}) => {
               <h4>Larger storage</h4>
               <p className="add-on-para">Extra 1TB of cloud save</p>
             </div>
-            <div className="add-on-amount" ref={largerMontlyPriceRef}>
+            <div
+              className="add-on-amount"
+              ref={largerMontlyPriceRef}
+              style={{ display: isYearlyActive ? "none" : "block" }}
+            >
               +$2/mo
             </div>
             <div>
-              <p className="add-on-amount-yearly">+$20/yr</p>
+              <p
+                className="add-on-amount-yearly"
+                ref={largerYearlyPriceRef}
+                style={{ display: isYearlyActive ? "block" : "none" }}
+              >
+                +$20/yr
+              </p>
             </div>
           </div>
 
@@ -124,12 +146,22 @@ export const AddOn = ({isYearlyActive}) => {
               <h4>Customizable profile</h4>
               <p className="add-on-para">Custom theme on your profile</p>
             </div>
-            <div className="add-on-amount" ref={customizeMonthlyPriceRef}>
+            <div
+              className="add-on-amount"
+              ref={customizeMonthlyPriceRef}
+              style={{ display: isYearlyActive ? "none" : "block" }}
+            >
               +$2/mo
             </div>
 
             <div>
-              <p className="add-on-amount-yearly">+$20/yr</p>
+              <p
+                className="add-on-amount-yearly"
+                ref={customizeYearlyPriceRef}
+                style={{ display: isYearlyActive ? "block" : "none" }}
+              >
+                +$20/yr
+              </p>
             </div>
           </div>
         </section>
