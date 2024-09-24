@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PricingContext } from "./PricingContext";
 import { useNavigate } from "react-router-dom";
+import "./App.css";
 
 
 export const FinishingUpSection = ()=>{
@@ -8,6 +10,8 @@ const navigate = useNavigate();
 const goBackToThree = () => {
     navigate("/step3");
   };
+
+  const {selectedPlan}= useContext(PricingContext);
 
     return(
         <>
@@ -19,8 +23,11 @@ const goBackToThree = () => {
           </p>
         </header>
 
-        <section>
-            
+        <section className="main-info-wrapper">
+            <div>
+              {selectedPlan}
+            </div>
+           
         </section>
 
 
