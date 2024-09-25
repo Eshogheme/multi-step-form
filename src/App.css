@@ -301,5 +301,8 @@ padding: 0.3em;
 }
 
 
-
+.selected-plan{
+  font-weight: 800;
+ 
+}
 }

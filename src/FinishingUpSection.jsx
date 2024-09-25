@@ -12,7 +12,7 @@ const goBackToThree = () => {
   };
 
   const {selectedPlan}= useContext(PricingContext);
-
+  const { isYearlyActive } = useContext(PricingContext);
     return(
         <>
         <section className="step4-wrapper">
@@ -25,7 +25,7 @@ const goBackToThree = () => {
 
         <section className="main-info-wrapper">
             <div>
-              {selectedPlan}
+              <span className="selected-plan">{selectedPlan} {isYearlyActive ? "(yearly)" : "(monthly)"}</span> 
             </div>
            
         </section>
