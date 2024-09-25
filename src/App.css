@@ -366,4 +366,34 @@ padding: 0.3em;
 .confirm{
   background-color: hsl(243, 100%, 62%);;
 }
+
+.step5-wrapper{
+  width: 89%;
+  height: 72vh;
+  background-color: white;
+  padding: 1.5em;
+  font-family: cleanFont;
+  color: hsl(213, 96%, 18%);
+  margin: 0 auto;
+  position: relative;
+  bottom: 3.5em;
+  border-radius: 0.7em;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.thank-you-img{
+  margin: 0 auto;
+  margin-top: 3em;
+}
+
+.thank-you-wrapper{
+  text-align: center;
+}
+
+.thank-you-para{
+  color:hsl(231, 11%, 63%);
+  font-size: 19px;
+}
 }

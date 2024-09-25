@@ -11,6 +11,10 @@ const goBackToThree = () => {
     navigate("/step3");
   };
 
+  const goToFive = () => {
+    navigate("/step5");
+  };
+
   const {selectedPlan}= useContext(PricingContext);
   const { isYearlyActive,planPrices, selectedAddOns, addOnPrices } = useContext(PricingContext);
 
@@ -85,7 +89,9 @@ const formattedFinalTotal = isYearlyActive
         <button className="goback-btn" onClick={goBackToThree}>
           Go Back
         </button>
-        <button className="form-btn confirm">Confirm</button>
+        <button className="form-btn confirm"
+        onClick={goToFive}
+        >Confirm</button>
       </footer>
         
         </>
