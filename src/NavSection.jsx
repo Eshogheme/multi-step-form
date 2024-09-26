@@ -33,18 +33,58 @@ export const NavSection = () => {
       <section className="links-ul-wrapper">
         <nav>
           <ul className="links-wrapper">
+            <span className="link-item">
             <li className="links first-li">
               1
             </li>
+            <div className="step-links-para">
+            <p className="step-links-para1">
+            STEP1
+            </p>
+            <p className="step-links-para2">
+              YOUR INFO
+            </p>
+            </div>
+            </span>
+            <span className="link-item">
             <li className="links second-li">
               2
             </li>
+            <div className="step-links-para">
+            <p className="step-links-para1">
+            STEP2
+            </p>
+            <p className="step-links-para2">
+              SELECT PLAN
+            </p>
+            </div>
+            </span>
+            <span className="link-item">
             <li className="links third-li">
               3
             </li>
+            <div className="step-links-para">
+            <p className="step-links-para1">
+            STEP3
+            </p>
+            <p className="step-links-para2">
+              ADD-ONS
+            </p>
+            </div>
+            </span>
+            <span className="link-item">
             <li className="links fourth-li">
               4
             </li>
+            <div className="step-links-para">
+            <p className="step-links-para1">
+            STEP4
+            </p>
+            <p className="step-links-para2">
+              SUMMARY
+            </p>
+            </div>
+            </span>
           </ul>
         </nav>
       </section>

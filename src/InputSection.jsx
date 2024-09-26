@@ -15,7 +15,7 @@ export const InputSection = () => {
   const handleClick = () => {
     let isValid = true;
 
-    // Check name
+    
     if (name.trim() === "") {
       nameRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
       isValid = false;
@@ -23,7 +23,7 @@ export const InputSection = () => {
       nameRef.current.style.border = ""; // Reset the border style
     }
 
-    // Check email
+
     if (email.trim() === "") {
       emailRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
       isValid = false;
@@ -48,7 +48,7 @@ export const InputSection = () => {
   return (
     <>
       <section className="step1-wrapper">
-        <header>
+        <header className="header">
           <h2 id="header-h1">Personal info</h2>
           <p id="header-para">
             Please provide your name, email address, and phone number

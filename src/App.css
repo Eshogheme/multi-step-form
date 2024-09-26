@@ -38,6 +38,393 @@ body {
     margin-right: 4em;
     position: relative;
     top: 2.5em;
+    
+  }
+  .links{
+    list-style-type: none;
+    border: 1px solid white;
+    padding: 0.9em;
+    border-radius: 50%;
+    
+    margin-left: 1em;
+    font-family: newFont;
+  }
+
+  
+.step-link-para {
+  display: none;
+}
+
+  
+  .active{
+    background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+    border: none;
+  }
+
+  .step1-wrapper {
+    width: 89%;
+    height: 55vh;
+    background-color: white;
+    padding: 1.5em;
+    font-family: cleanFont;
+    color: hsl(213, 96%, 18%);
+    margin: 0 auto;
+    position: relative;
+    bottom: 4em;
+    border-radius: 0.7em;
+  }
+  #header-para {
+    color: hsl(231, 11%, 63%);
+    width: 90%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 0.5em;
+  }
+  .input::placeholder {
+    font-family: newFont;
+    color: hsl(229, 24%, 87%);
+  }
+
+  .btn-wrapper {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: right;
+    padding-right: 1em;
+    margin-top: 4em;
+  }
+
+  .form-btn {
+    display: flex;
+    text-align: center;
+    padding: 1em;
+    width: 7em;
+    border: none;
+    color: white;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 0.3em;
+  }
+
+  .step2-wrapper {
+    width: 89%;
+    height: 72vh;
+    background-color: white;
+    padding: 1.5em;
+    font-family: cleanFont;
+    color: hsl(213, 96%, 18%);
+    margin: 0 auto;
+    position: relative;
+    bottom: 3.5em;
+    border-radius: 0.7em;
+  }
+  .plan-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 5em);
+    border: 1px solid hsl(229, 24%, 87%);
+    padding: 0.5em;
+    border-radius: 1em;
+    height: 12vh;
+    margin-bottom: 0.5em;
+  }
+  svg {
+    margin-top: 0.5em;
+  }
+  .para-wrapper {
+    position: relative;
+    top: -0.5em;
+  }
+  .para-head {
+    font-family: newFont;
+  }
+  .monthly {
+    font-size: 12px;
+    color: hsl(231, 11%, 63%);
+  }
+
+  .yearly-wrapper {
+    position: relative;
+    top: -1.2em;
+    color: hsl(231, 11%, 63%);
+    font-size: 12px;
+    display: none;
+  }
+
+.yearly-discount{
+    color: hsl(213, 96%, 18%) ;
+}
+
+
+  .monthly-yearly-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(229, 24%, 87%);
+    border-radius: 1em;
+    height:5vh;
+  }/* Button styles */
+.toggle-btn {
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  color: white;
+  background-color: hsl(213, 96%, 18%);
+  border: none;
+  border-radius: 5em;
+  cursor: pointer;
+  position: relative;  /* Added relative positioning */
+  overflow: hidden;
+  transition: color 0.4s;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* Circle inside the button */
+.toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;  /* Start position of the circle */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.5s ease;  /* Smooth sliding transition */
+}
+
+/* Active state */
+.toggle-btn.active::before {
+  left: calc(100% - 23px);  /* Move the circle to the right */
+}
+
+  .step2btn-wrapper {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
+    margin-top: 4em;
+    position: absolute;
+    width: 100%;
+    top: 40em;
+  }
+
+  .goback-btn {
+    background-color: white;
+    border: none;
+    color: hsl(231, 11%, 63%);
+  }
+
+  .step3-wrapper,
+  .step4-wrapper
+  {
+    width: 89%;
+    height: 70vh;
+    background-color: white;
+    padding: 1.5em;
+    font-family: cleanFont;
+    color: hsl(213, 96%, 18%);
+    margin: 0 auto;
+    position: relative;
+    bottom: 3.5em;
+    border-radius: 0.7em;
+  }
+  .step3-header-para,
+  .step4-header-para
+  {
+    color: hsl(231, 11%, 63%);
+  }
+
+  .step3btn-wrapper,
+  .step4btn-wrapper
+  {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
+    margin-top: 4em;
+    position: absolute;
+    width: 100%;
+    top: 45em;
+  }
+
+.add-on-wrapper{
+  display: flex;
+justify-content: space-around;
+padding: 0.3em;
+  border:1px solid hsl(229, 24%, 87%);
+  border-radius: 1em;
+  height: 14vh;
+  margin-bottom: 1em;
+}
+.check-box{
+  width: 7%;
+  margin-right: 1.5em;
+}
+
+.add-on-para{
+  font-size: 12px;
+  position: relative;
+  top: -1em;
+  color: hsl(231, 11%, 63%);
+ width: 100%;
+  
+}
+
+.add-on-amount{
+  font-size: 12px;
+  color: hsl(243, 100%, 62%);
+  margin-top: 2.5em;
+ display: flex;
+ flex-direction: column;
+
+}
+
+.add-on-amount-yearly{
+  font-size: 12px;
+  color: hsl(243, 100%, 62%);
+  margin-top: 2.5em;
+  display: none;
+}
+
+.main-info-wrapper{
+  background-color: hsl(231, 100%, 99%);
+  padding: 1.5em;
+  padding-right: 1em;
+  margin-top: 1em;
+  border-radius: 1em;
+  height: 40vh;
+  
+
+}
+
+
+.selected-plan-price-wrapper{
+  display:flex;
+  justify-content: space-around;
+}
+
+.selected-plan
+{
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 2em;
+  position: relative;
+  right: 1em;
+}
+
+.selected-price{
+  font-weight: 800;
+  font-size: 15px;
+}
+.change-link{
+  color: hsl(231, 11%, 63%);
+  position: relative;
+  bottom: 1em;
+}
+
+.line{
+  background-color:hsl(229, 24%, 87%) ;
+  border: none;
+  height: 2px;
+  margin: 20px 0;
+  position: relative;
+  bottom: 1em;
+}
+.selected-add-ons{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 1.5em;
+  color: hsl(231, 11%, 63%);
+}
+
+.checked-prices{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10em;
+  color: hsl(213, 96%, 18%);
+  position: relative;
+  bottom: 1em;
+  font-size: 15px;
+}
+
+.final-total-price{
+  display: flex;
+  justify-content: space-around;
+  color: hsl(231, 11%, 63%);
+  
+}
+
+.total-price{
+  color: hsl(243, 100%, 62%);
+  font-weight: 1000;
+}
+
+.confirm{
+  background-color: hsl(243, 100%, 62%);;
+}
+
+.step5-wrapper{
+  width: 89%;
+  height: 60vh;
+  background-color: white;
+  padding: 1.5em;
+  font-family: cleanFont;
+  color: hsl(213, 96%, 18%);
+  margin: 0 auto;
+  position: relative;
+  bottom: 3.5em;
+  border-radius: 0.7em;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.thank-you-img{
+  margin: 0 auto;
+  margin-top: 3em;
+}
+
+.thank-you-wrapper{
+  text-align: center;
+}
+
+.thank-you-para{
+  color:hsl(231, 11%, 63%);
+  font-size: 19px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .links-ul-wrapper {
+    background: url("../assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vh;
+    position: relative;
+    top: -1em;
+    color: white;
+  }
+  .links-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 4em;
+    position: relative;
+    top: 2.5em;
   }
   .links{
     list-style-type: none;
@@ -47,6 +434,38 @@ body {
     margin-left: 1em;
     font-family: newFont;
   }
+  
+  .link-item{
+    display: flex;        
+    align-items: center;  
+    gap: 10px; 
+   
+  }
+
+.step-link-para {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: 1em;
+  display: none;
+}
+
+.step-links-para1{
+  font-size: 15px;
+  color: hsl(231, 11%, 63%);
+  font-family:newFont ;
+}
+.step-links-para2{
+  font-family:cleanFont ;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+
+
+
+
 
   .active{
     background-color: hsl(206, 94%, 87%);
@@ -207,7 +626,7 @@ body {
     margin-top: 4em;
     position: absolute;
     width: 100%;
-    top: 35em;
+    top: 45em;
   }
 
   .goback-btn {
@@ -247,7 +666,7 @@ body {
     margin-top: 4em;
     position: absolute;
     width: 100%;
-    top: 35em;
+    top: 45em;
   }
 
 .add-on-wrapper{
@@ -256,7 +675,7 @@ justify-content: space-around;
 padding: 0.3em;
   border:1px solid hsl(229, 24%, 87%);
   border-radius: 1em;
-  height: 12vh;
+  height: 14vh;
   margin-bottom: 1em;
 }
 .check-box{
@@ -369,7 +788,7 @@ padding: 0.3em;
 
 .step5-wrapper{
   width: 89%;
-  height: 72vh;
+  height: 60vh;
   background-color: white;
   padding: 1.5em;
   font-family: cleanFont;
@@ -396,4 +815,460 @@ padding: 0.3em;
   color:hsl(231, 11%, 63%);
   font-size: 19px;
 }
+
+
+
+
+
+}
+
+@media (min-width: 1024px){
+
+  body{
+    overflow: hidden;
+  }
+
+  .links-ul-wrapper {
+    background: url("../assets/images/bg-sidebar-desktop.svg");
+   height:60vh;
+   width: 30%;
+   background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    top: 6.5em;
+    left: 5em;
+    z-index: 1;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius:3em;
+  }
+  .links-wrapper {
+    display: flex;
+    justify-content:left;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-right: 4em;
+    position: relative;
+    top: 2.5em;
+
+  } 
+   .links{
+    list-style-type: none;
+    border: 1px solid white;
+    padding: 0.9em;
+    width: 20%;
+    border-radius: 50%;
+    margin-top: 2em;
+    font-family: newFont;
+  }
+
+  .link-item{
+    display: flex;        
+    align-items: center;  
+    gap: 10px; 
+  }
+
+.step-link-para {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: 1em;
+}
+
+
+  .step-links-para1{
+    font-size: 15px;
+    color: hsl(231, 11%, 63%);
+    font-family:newFont ;
+  }
+  .step-links-para2{
+    font-family:cleanFont ;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
+
+  
+  .active{
+    background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+    border: none;
+  }
+
+  .step1-wrapper {
+    width: 89%;
+    height: 65vh;
+    background-color: white;
+    padding: 1.5em;
+    font-family: cleanFont;
+    color: hsl(213, 96%, 18%);
+    margin: 0 auto;
+   position: relative;
+   top: -30em;
+    border-radius: 0.7em;
+  }
+
+  .header{
+    position: relative;
+    left: 20em;
+  }
+#header-h1{
+  font-size: 35px;
+}
+
+  #header-para {
+    color: hsl(231, 11%, 63%);
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 1.5em;
+    left: 18em;
+    font-size: 18px;
+  }
+
+  .input {
+    margin-bottom: 3em;
+    padding: 1.5em;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 0.5em;
+    width: 50%;
+  }
+  .input::placeholder {
+    font-family: newFont;
+    color: hsl(229, 24%, 87%);
+  }
+  input:focus{
+    border-color: hsl(243, 100%, 62%);
+    outline: none;
+    box-shadow: 0 0 5px hsl(243, 100%, 62%); 
+  }
+
+  .btn-wrapper {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: right;
+    padding-right: 1em;
+   position: relative;
+   bottom: 21em;
+  }
+
+  .form-btn {
+    display: flex;
+    justify-content: center;
+    padding: 1.5em;
+    width: 10em;
+    border: none;
+    color: white;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 0.3em;
+  }
+
+  .step2-wrapper {
+    width: 89%;
+    height: 72vh;
+    background-color: white;
+    padding: 1.5em;
+    font-family: cleanFont;
+    color: hsl(213, 96%, 18%);
+    margin: 0 auto;
+    position: relative;
+    bottom: 3.5em;
+    border-radius: 0.7em;
+  }
+  .plan-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 5em);
+    border: 1px solid hsl(229, 24%, 87%);
+    padding: 0.5em;
+    border-radius: 1em;
+    height: 12vh;
+    margin-bottom: 0.5em;
+  }
+  svg {
+    margin-top: 0.5em;
+  }
+  .para-wrapper {
+    position: relative;
+    top: -0.5em;
+  }
+  .para-head {
+    font-family: newFont;
+  }
+  .monthly {
+    font-size: 12px;
+    color: hsl(231, 11%, 63%);
+  }
+
+  .yearly-wrapper {
+    position: relative;
+    top: -1.2em;
+    color: hsl(231, 11%, 63%);
+    font-size: 12px;
+    display: none;
+  }
+
+.yearly-discount{
+    color: hsl(213, 96%, 18%) ;
+}
+
+
+  .monthly-yearly-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(229, 24%, 87%);
+    border-radius: 1em;
+    height:5vh;
+  }/* Button styles */
+.toggle-btn {
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  color: white;
+  background-color: hsl(213, 96%, 18%);
+  border: none;
+  border-radius: 5em;
+  cursor: pointer;
+  position: relative;  /* Added relative positioning */
+  overflow: hidden;
+  transition: color 0.4s;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* Circle inside the button */
+.toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;  /* Start position of the circle */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.5s ease;  /* Smooth sliding transition */
+}
+
+/* Active state */
+.toggle-btn.active::before {
+  left: calc(100% - 23px);  /* Move the circle to the right */
+}
+
+  .step2btn-wrapper {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
+    margin-top: 4em;
+    position: absolute;
+    width: 100%;
+    top: 45em;
+  }
+
+  .goback-btn {
+    background-color: white;
+    border: none;
+    color: hsl(231, 11%, 63%);
+  }
+
+  .step3-wrapper,
+  .step4-wrapper
+  {
+    width: 89%;
+    height: 70vh;
+    background-color: white;
+    padding: 1.5em;
+    font-family: cleanFont;
+    color: hsl(213, 96%, 18%);
+    margin: 0 auto;
+    position: relative;
+    bottom: 3.5em;
+    border-radius: 0.7em;
+  }
+  .step3-header-para,
+  .step4-header-para
+  {
+    color: hsl(231, 11%, 63%);
+  }
+
+  .step3btn-wrapper,
+  .step4btn-wrapper
+  {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
+    margin-top: 4em;
+    position: absolute;
+    width: 100%;
+    top: 45em;
+  }
+
+.add-on-wrapper{
+  display: flex;
+justify-content: space-around;
+padding: 0.3em;
+  border:1px solid hsl(229, 24%, 87%);
+  border-radius: 1em;
+  height: 14vh;
+  margin-bottom: 1em;
+}
+.check-box{
+  width: 7%;
+  margin-right: 1.5em;
+}
+
+.add-on-para{
+  font-size: 12px;
+  position: relative;
+  top: -1em;
+  color: hsl(231, 11%, 63%);
+ width: 100%;
+  
+}
+
+.add-on-amount{
+  font-size: 12px;
+  color: hsl(243, 100%, 62%);
+  margin-top: 2.5em;
+ display: flex;
+ flex-direction: column;
+
+}
+
+.add-on-amount-yearly{
+  font-size: 12px;
+  color: hsl(243, 100%, 62%);
+  margin-top: 2.5em;
+  display: none;
+}
+
+.main-info-wrapper{
+  background-color: hsl(231, 100%, 99%);
+  padding: 1.5em;
+  padding-right: 1em;
+  margin-top: 1em;
+  border-radius: 1em;
+  height: 40vh;
+  
+
+}
+
+
+.selected-plan-price-wrapper{
+  display:flex;
+  justify-content: space-around;
+}
+
+.selected-plan
+{
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 2em;
+  position: relative;
+  right: 1em;
+}
+
+.selected-price{
+  font-weight: 800;
+  font-size: 15px;
+}
+.change-link{
+  color: hsl(231, 11%, 63%);
+  position: relative;
+  bottom: 1em;
+}
+
+.line{
+  background-color:hsl(229, 24%, 87%) ;
+  border: none;
+  height: 2px;
+  margin: 20px 0;
+  position: relative;
+  bottom: 1em;
+}
+.selected-add-ons{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 1.5em;
+  color: hsl(231, 11%, 63%);
+}
+
+.checked-prices{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10em;
+  color: hsl(213, 96%, 18%);
+  position: relative;
+  bottom: 1em;
+  font-size: 15px;
+}
+
+.final-total-price{
+  display: flex;
+  justify-content: space-around;
+  color: hsl(231, 11%, 63%);
+  
+}
+
+.total-price{
+  color: hsl(243, 100%, 62%);
+  font-weight: 1000;
+}
+
+.confirm{
+  background-color: hsl(243, 100%, 62%);;
+}
+
+.step5-wrapper{
+  width: 89%;
+  height: 60vh;
+  background-color: white;
+  padding: 1.5em;
+  font-family: cleanFont;
+  color: hsl(213, 96%, 18%);
+  margin: 0 auto;
+  position: relative;
+  bottom: 3.5em;
+  border-radius: 0.7em;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.thank-you-img{
+  margin: 0 auto;
+  margin-top: 3em;
+}
+
+.thank-you-wrapper{
+  text-align: center;
+}
+
+.thank-you-para{
+  color:hsl(231, 11%, 63%);
+  font-size: 19px;
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
 }
