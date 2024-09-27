@@ -2,13 +2,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-  background-color: hsl(206, 94%, 87%);
-}
+
 
 @font-face {
   font-family: newFont;
@@ -21,6 +15,14 @@ body {
 }
 
 @media (min-width: 310px) and (max-width: 767px) {
+
+  html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: hsl(206, 94%, 87%);
+}
   .links-ul-wrapper {
     background: url("../assets/images/bg-sidebar-mobile.svg");
     background-repeat: no-repeat;
@@ -429,8 +431,13 @@ padding: 0.3em;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
-  .links-ul-wrapper {
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: hsl(206, 94%, 87%);
+  }  .links-ul-wrapper {
     background: url("../assets/images/bg-sidebar-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -489,6 +496,16 @@ padding: 0.3em;
 
 }
 
+.error-messages{
+  color: hsl(354, 84%, 57%);
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  position: relative;
+  top: -5em;
+  left:30em;
+}
+
 
 
 
@@ -538,6 +555,13 @@ padding: 0.3em;
     outline: none;
     box-shadow: 0 0 5px hsl(243, 100%, 62%); 
   }
+
+  
+  input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
   .btn-wrapper {
     background-color: white;
@@ -857,19 +881,21 @@ padding: 0.3em;
 
 @media (min-width: 1024px){
 
-  body{
+  html,
+  body {
+    padding: 0;
+    margin: 0;
     overflow: hidden;
+    background-color: hsl(206, 94%, 87%);
   }
-
   .links-ul-wrapper {
     background: url("../assets/images/bg-sidebar-desktop.svg");
-   height:60vh;
    width: 30%;
    background-repeat: no-repeat;
     color: white;
     position: relative;
-    top: 6.5em;
-    left: 5em;
+    top:10.5em;
+    left: 6em;
     z-index: 1;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius:3em;
@@ -877,7 +903,7 @@ padding: 0.3em;
   .links-wrapper {
     display: flex;
     justify-content:left;
-    /* align-items: center; */
+    
     flex-direction: column;
     margin-right: 4em;
     position: relative;
@@ -892,6 +918,7 @@ padding: 0.3em;
     border-radius: 50%;
     margin-top: 2em;
     font-family: newFont;
+    text-align: center;
   }
 
   .link-item{
@@ -900,13 +927,18 @@ padding: 0.3em;
     gap: 10px; 
   }
 
-.step-link-para {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  top: 1em;
-}
+
+  .steps-container{
+    position: relative;
+    top: -18em;
+    left: 7em;
+    width: 50%;
+  }
+
+  .step-links-para{
+    margin-top: 2em;
+  
+  }
 
 
   .step-links-para1{
@@ -918,6 +950,7 @@ padding: 0.3em;
     font-family:cleanFont ;
     font-weight: 600;
     letter-spacing: 3px;
+   
   }
 
   
@@ -929,14 +962,14 @@ padding: 0.3em;
 
   .step1-wrapper {
     width: 89%;
-    height: 65vh;
+height:70vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
     color: hsl(213, 96%, 18%);
     margin: 0 auto;
-   position: relative;
-   top: -30em;
+    position: relative;
+    top: -33em;
     border-radius: 0.7em;
   }
 
@@ -959,17 +992,18 @@ padding: 0.3em;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    top: 1.5em;
-    left: 18em;
-    font-size: 18px;
+   
+    left: 20em;
+    
   }
 
   .input {
     margin-bottom: 3em;
-    padding: 1.5em;
+    padding: 1em;
     border: 1px solid hsl(231, 11%, 63%);
     border-radius: 0.5em;
     width: 50%;
+    cursor: pointer;
   }
   .input::placeholder {
     font-family: newFont;
@@ -981,50 +1015,83 @@ padding: 0.3em;
     box-shadow: 0 0 5px hsl(243, 100%, 62%); 
   }
 
+  
+  input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+  .error-messages{
+    color: hsl(354, 84%, 57%);
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    position: relative;
+    top: -7em;
+    left:20em;
+  }
+
   .btn-wrapper {
-    background-color: white;
+    
     padding: 2em;
     display: flex;
     justify-content: right;
     padding-right: 1em;
    position: relative;
    bottom: 21em;
-  }
+   z-index: 1000;
+  } 
 
   .form-btn {
     display: flex;
     justify-content: center;
-    padding: 1.5em;
-    width: 10em;
+    padding: 1em;
+    width: 7em;
     border: none;
     color: white;
     background-color: hsl(213, 96%, 18%);
     border-radius: 0.3em;
+    position: relative;
+    top: -25em;
+    right: 15.7em;
   }
 
   .step2-wrapper {
     width: 89%;
-    height: 72vh;
+    height: 70vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
     color: hsl(213, 96%, 18%);
     margin: 0 auto;
     position: relative;
-    bottom: 3.5em;
+    bottom: 33em;
     border-radius: 0.7em;
+  
+  }
+  .plans{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 11em;
   }
   .plan-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 5em);
+  cursor: pointer;
+    width: 20%;
     border: 1px solid hsl(229, 24%, 87%);
-    padding: 0.5em;
+    padding: 1em;
     border-radius: 1em;
-    height: 12vh;
-    margin-bottom: 0.5em;
+    height: 20vh;
+    margin-left: 1em;
+    
   }
+ 
   svg {
     margin-top: 0.5em;
+  }
+  .para-head-price-wrapper{
+    margin-top: 3em;
   }
   .para-wrapper {
     position: relative;
@@ -1056,9 +1123,13 @@ padding: 0.3em;
     justify-content: center;
     align-items: center;
     background-color: hsl(229, 24%, 87%);
-    border-radius: 1em;
+    border-radius: 0.5em;
     height:5vh;
-  }/* Button styles */
+    width: 52%;
+    margin-top: 2em;
+    margin-left:20em ;
+  }
+
 .toggle-btn {
   padding: 0.7em 1.7em;
   font-size: 18px;
@@ -1094,7 +1165,6 @@ padding: 0.3em;
 }
 
   .step2btn-wrapper {
-    background-color: white;
     padding: 2em;
     display: flex;
     justify-content: space-between;
@@ -1109,6 +1179,15 @@ padding: 0.3em;
     background-color: white;
     border: none;
     color: hsl(231, 11%, 63%);
+    position: relative;
+    top: -10em;
+    left: 30em;
+  }
+
+  .form-btn-step2{
+    position: relative;
+    top: -10em;
+    left: -15em;
   }
 
   .step3-wrapper,
@@ -1122,7 +1201,7 @@ padding: 0.3em;
     color: hsl(213, 96%, 18%);
     margin: 0 auto;
     position: relative;
-    bottom: 3.5em;
+    bottom: 33em;
     border-radius: 0.7em;
   }
   .step3-header-para,
@@ -1134,7 +1213,6 @@ padding: 0.3em;
   .step3btn-wrapper,
   .step4btn-wrapper
   {
-    background-color: white;
     padding: 2em;
     display: flex;
     justify-content: space-between;
@@ -1151,18 +1229,27 @@ justify-content: space-around;
 padding: 0.3em;
   border:1px solid hsl(229, 24%, 87%);
   border-radius: 1em;
-  height: 14vh;
+  width: 50%;
   margin-bottom: 1em;
+  margin-left: 20em;
+
 }
 .check-box{
+  cursor: pointer;
   width: 7%;
   margin-right: 1.5em;
-}
+  border: none;
 
+}
+.add-on-header-para{
+  position: relative;
+  left: -3em;
+}
 .add-on-para{
   font-size: 12px;
   position: relative;
   top: -1em;
+  
   color: hsl(231, 11%, 63%);
  width: 100%;
   
