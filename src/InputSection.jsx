@@ -11,6 +11,9 @@ export const InputSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState("");
   const [phonenumber, setPhoneNumber] = useState("");
+  const [nameErrorMessage,setNameErrorMessage] = useState("")
+  const [ emailErrorMessage,setEmailErrorMessage] = useState('')
+  const [phoneNumberErrorMessage, setPhoneNumberErrorMessage] = useState('');
 
   const handleClick = () => {
     let isValid = true;
@@ -19,25 +22,32 @@ export const InputSection = () => {
     if (name.trim() === "") {
       nameRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
       isValid = false;
+      setNameErrorMessage('This field is required');
     } else {
-      nameRef.current.style.border = ""; // Reset the border style
+      nameRef.current.style.border = ""; 
+      setNameErrorMessage('');
     }
 
 
     if (email.trim() === "") {
       emailRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
       isValid = false;
+      setEmailErrorMessage('This field is required')
     } else {
-      emailRef.current.style.border = ""; // Reset the border style
+      emailRef.current.style.border = ""; 
+      setEmailErrorMessage('')
     }
 
-    // Check phone number
-    if (phonenumber.trim() === "") {
+  
+    if (phonenumber.trim() === "" || phonenumber.length !== 11) {
       phoneRef.current.style.border = "1px solid hsl(354, 84%, 57%)";
       isValid = false;
+      setPhoneNumberErrorMessage('This field is required')
     } else {
-      phoneRef.current.style.border = ""; // Reset the border style
+      phoneRef.current.style.border = ""; 
+      setPhoneNumberErrorMessage('')
     }
+
 
     // Navigate only if all inputs are valid
     if (isValid) {
@@ -66,6 +76,7 @@ export const InputSection = () => {
             onChange={(e) => setName(e.target.value)}
             ref={nameRef}
           />
+             {nameErrorMessage && <span className="error-messages">{nameErrorMessage}</span>}
 
           <label htmlFor="email">Email</label>
           <input
@@ -78,6 +89,7 @@ export const InputSection = () => {
             onChange={(e) => setEmail(e.target.value)}
             ref={emailRef}
           />
+             {emailErrorMessage && <span className="error-messages">{emailErrorMessage}</span>}
 
           <label htmlFor="phonenumber">Phone Number</label>
           <input
@@ -90,6 +102,8 @@ export const InputSection = () => {
             onChange={(e) => setPhoneNumber(e.target.value)}
             ref={phoneRef}
           />
+         {phoneNumberErrorMessage && <span className="error-messages">{phoneNumberErrorMessage}</span>}
+
         </form>
       </section>
 
