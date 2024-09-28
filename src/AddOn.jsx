@@ -155,7 +155,7 @@ export const AddOn = () => {
         <button className="goback-btn" onClick={goBackToTwo}>
           Go Back
         </button>
-        <button className="form-btn" onClick={goToFour}>
+        <button className="form-btn form-btn-step2" onClick={goToFour}>
           Next Step
         </button>
       </footer>

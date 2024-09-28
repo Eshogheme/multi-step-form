@@ -44,7 +44,7 @@ const formattedFinalTotal = isYearlyActive
     return(
         <>
         <section className="step4-wrapper">
-        <header>
+        <header className="header">
           <h2>Finishing up</h2>
           <p className="step4-header-para">
             Double-check everything looks OK before confirming
@@ -89,7 +89,7 @@ const formattedFinalTotal = isYearlyActive
         <button className="goback-btn" onClick={goBackToThree}>
           Go Back
         </button>
-        <button className="form-btn confirm"
+        <button className="form-btn confirm form-btn-step2"
         onClick={goToFive}
         >Confirm</button>
       </footer>
