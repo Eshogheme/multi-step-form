@@ -1489,7 +1489,7 @@ margin-left: 4em;
 
   .step1-wrapper {
     width: 70%;
-height:70vh;
+height:75vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
@@ -1587,7 +1587,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .step2-wrapper {
     width: 70%;
-    height: 70vh;
+    height: 75vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
@@ -1723,7 +1723,7 @@ input[type="number"]::-webkit-inner-spin-button {
   .step4-wrapper
   {
     width: 70%;
-    height: 70vh;
+    height: 75vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
@@ -1884,7 +1884,7 @@ margin-left: 31em;
 
 .step5-wrapper{
   width: 70%;
-  height: 70vh;
+  height: 75vh;
   background-color: white;
   padding: 1.5em;
   font-family: cleanFont;
