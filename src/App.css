@@ -1919,7 +1919,7 @@
   .step1-wrapper,
   .step2-wrapper {
     width: 70%;
-    height: 82vh;
+    height: 80vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
@@ -2132,7 +2132,7 @@
   .step3-wrapper,
   .step4-wrapper {
     width: 70%;
-    height: 85vh;
+    height: 80vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
@@ -2282,7 +2282,7 @@
 
   .step5-wrapper {
     width: 70%;
-    height: 85vh;
+    height: 80vh;
     background-color: white;
     padding: 1.5em;
     font-family: cleanFont;
