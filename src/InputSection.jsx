@@ -57,6 +57,7 @@ export const InputSection = () => {
 
   return (
     <>
+    
       <section className="step1-wrapper">
         <header className="header">
           <h2 id="header-h1">Personal info</h2>
@@ -106,7 +107,7 @@ export const InputSection = () => {
 
         </form>
       </section>
-
+      
       <footer className="btn-wrapper">
         <button className="form-btn" onClick={handleClick}>
           Next Step
