@@ -36,7 +36,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![screenshot.png](./src/screenshot.png/Screenshot%20(84).png);
+![screenshot.png](./src/screenshot.png/Screenshot%20(85).png);
+![screenshot.png](./src/screenshot.png/Screenshot%20(86).png);
+![screenshot.png](./src/screenshot.png/Screenshot%20(87).png);
+![screenshot.png](./src/screenshot.png/Screenshot%20(88).png);
+![screenshot.png](./src/screenshot.png/Screenshot%20(89).png);
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
